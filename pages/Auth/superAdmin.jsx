@@ -1,5 +1,5 @@
 import styles from '../../styles/Home.module.css'
-import { Card, CardActions, TextField, Box, CardActionArea, Button, CardContent, ButtonBase } from '@material-ui/core';
+import { Card, CardActions, TextField, Button, ButtonBase } from '@material-ui/core';
 import Image from 'next/image';
 import Arrow from "@material-ui/icons/SendOutlined"
 import {Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@material-ui/core';

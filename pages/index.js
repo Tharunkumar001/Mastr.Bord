@@ -1,15 +1,17 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css'
-import { useEffect } from 'react';
-import { Button, Card, Grid, Hidden, IconButton,} from '@material-ui/core';
-import AboutIcon from "@material-ui/icons/BookOutlined"
-import ContactIcon from "@material-ui/icons/ContactPhoneOutlined"
+import {IconButton,} from '@material-ui/core';
 import { useRouter } from 'next/router'
+import AppContext from './controllers/AppContext';
+import AuthPage from './authPage';
+import { useState } from 'react';
 
-export default function Home() {
+export default function Home(props) {
   const router = useRouter()
+  const [container, setContainer] = useState("admin");
 
   return (
+    <AppContext.Provider value={container}>
     <div className={styles.container}>
       <Head>
         <title>Mastr.Bord</title>
@@ -25,9 +27,9 @@ export default function Home() {
         <a href="https://velalarengg.ac.in/">
             <h2>V C E T</h2>
         </a>
-
+        
         <div className={styles.grid}>
-          <button className={styles.card} onClick={() => router.push("/authPage")}>
+          <button className={styles.card} onclick={setContainer("admin")}>
             <h2>Admin &rarr;</h2>
             <p>Access in-depth Features of Mastr.Bord.</p>
           </button>
@@ -60,5 +62,6 @@ export default function Home() {
         
       </footer>
     </div>
+    </AppContext.Provider>
   )
 }
