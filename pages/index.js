@@ -2,16 +2,11 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css'
 import {IconButton,} from '@material-ui/core';
 import { useRouter } from 'next/router'
-import AppContext from './controllers/AppContext';
-import AuthPage from './authPage';
-import { useState } from 'react';
 
-export default function Home(props) {
+export default function Home() {
   const router = useRouter()
-  const [container, setContainer] = useState("admin");
 
   return (
-    <AppContext.Provider value={container}>
     <div className={styles.container}>
       <Head>
         <title>Mastr.Bord</title>
@@ -29,7 +24,9 @@ export default function Home(props) {
         </a>
         
         <div className={styles.grid}>
-          <button className={styles.card} onclick={setContainer("admin")}>
+          <button className={styles.card} onClick={() => {
+            router.push("/authPage")
+            }}>
             <h2>Admin &rarr;</h2>
             <p>Access in-depth Features of Mastr.Bord.</p>
           </button>
@@ -62,6 +59,5 @@ export default function Home(props) {
         
       </footer>
     </div>
-    </AppContext.Provider>
   )
 }

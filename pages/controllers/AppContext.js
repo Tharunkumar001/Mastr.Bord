@@ -1,5 +1,17 @@
-import React, { createContext } from "react";
+import { createContext, useContext } from 'react';
 
 const AppContext = createContext();
 
-export default AppContext;
+export function AppWrapper({ children }) {
+    let sharedState = "tharun";
+
+return (
+    <AppContext.Provider value={sharedState}>
+        {children}
+    </AppContext.Provider>
+    );
+}
+
+export function useAppContext() {
+    return useContext(AppContext);
+}
