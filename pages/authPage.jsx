@@ -1,10 +1,10 @@
 import { useContext } from 'react';
 import StudentAuth from './Auth/studentAuth';
 import { useAppContext } from './controllers/AppContext';
+import React from 'react';
 
 const AuthPage = (props) => {
-    let val = useAppContext();
-    console.log(val);
+    console.log(props)
     return (
         <div>
             <StudentAuth />
