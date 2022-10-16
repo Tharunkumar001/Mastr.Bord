@@ -3,16 +3,16 @@ import styles from '../styles/Home.module.css'
 import {IconButton,} from '@material-ui/core';
 import { useRouter } from 'next/router'
 import { useState } from 'react';
-import AuthPage from './authPage';
+import AuthPage from './AuthPage';
 import React from 'react';
 
 
-export default function Home() {
+const Home = () => {
   const router = useRouter()
 
   const containerHandler = (containerValue) => {
-    <AuthPage name = "admin" />
-    router.push("/authPage");
+    localStorage.setItem("container",containerValue);
+    router.push("/AuthPage");
   }
 
   return (
@@ -38,12 +38,12 @@ export default function Home() {
             <p>Access in-depth Features of Mastr.Bord.</p>
           </button>
 
-          <button className={styles.card}>
+          <button className={styles.card}  onClick = {() => containerHandler("super")}>
             <h2>Super Admin &rarr;</h2>
             <p>Administrator and can access in-depth features.</p>
           </button>
 
-          <button className={styles.card}>
+          <button className={styles.card}  onClick = {() => containerHandler("student")}>
             <h2>Student &rarr;</h2>
             <p>Get your daily stats through Mastr.Bord.</p>
           </button>
@@ -68,3 +68,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home;

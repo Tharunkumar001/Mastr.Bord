@@ -1,13 +1,36 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import StudentAuth from './Auth/studentAuth';
 import { useAppContext } from './controllers/AppContext';
 import React from 'react';
+import AdminPage from './Auth/adminAuth';
+import SuperAdmin from './Auth/superAdmin';
 
 const AuthPage = (props) => {
-    console.log(props)
+
+
+    const [state, setState] = useState(<StudentAuth />);
+
+    useEffect(() => {
+        let container = localStorage.getItem("container");
+        switch (container) {
+            case "admin":
+                setState(<AdminPage />)
+                break;
+            case "student":
+                setState(<StudentAuth />)
+                break;
+            case "super":
+                setState(<SuperAdmin />)
+                break;
+            default:
+                setState(<StudentAuth />)
+                break;
+        }
+    },[])
+    
     return (
         <div>
-            <StudentAuth />
+            {state}
         </div>
     )
 }
