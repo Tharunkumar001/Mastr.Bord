@@ -1,11 +1,10 @@
 import { useContext, useEffect, useState } from 'react';
 import StudentAuth from './Auth/studentAuth';
-import { useAppContext } from './controllers/AppContext';
 import React from 'react';
 import AdminPage from './Auth/adminAuth';
 import SuperAdmin from './Auth/superAdmin';
 
-const AuthPage = (props) => {
+const AuthPage = () => {
 
 
     const [state, setState] = useState(<StudentAuth />);
@@ -27,7 +26,7 @@ const AuthPage = (props) => {
                 break;
         }
     },[])
-    
+
     return (
         <div>
             {state}
