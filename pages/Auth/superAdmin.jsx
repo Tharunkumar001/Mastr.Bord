@@ -12,11 +12,14 @@ const SuperAdmin = () => {
             <Card className={styles.profileLoginCard}>
             <h1 style={{textAlign:"center"}}>Super Admin</h1>
                 <CardActions className={styles.profileLoginCardAction}>
-                    <TextField id="Email" label="Email" variant="filled" helperText="Eg: abc@gmail.com" />
+                    <TextField id="Email" label="Email" variant="filled" helperText="Eg: abc@gmail.com" 
+                    />
 
-                    <TextField id="Username" label="Username" variant="filled" helperText="Specified Username" />
+                    <TextField id="Username" label="Username" variant="filled" helperText="Specified Username" 
+                    />
 
-                    <TextField id="Password" label="Password" variant="filled" helperText="Specified Password" />
+                    <TextField id="Password" label="Password" variant="filled" helperText="Specified Password" 
+                    />
                 </CardActions>
 
                 <CardActions className={styles.profileCardContent}>
