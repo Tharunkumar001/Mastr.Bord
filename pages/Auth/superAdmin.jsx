@@ -1,10 +1,15 @@
 import styles from '../../styles/Home.module.css'
-import { Card, CardActions, TextField, Button, ButtonBase } from '@material-ui/core';
+import { Card, CardActions, TextField, Button, ButtonBase, InputAdornment, IconButton } from '@material-ui/core';
 import Image from 'next/image';
 import Arrow from "@material-ui/icons/SendOutlined"
 import {Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@material-ui/core';
+import { Visibility, VisibilityOff } from '@material-ui/icons';
+import { useState } from 'react';
 
 const SuperAdmin = () => {
+    const [showPassword, setShowPassword] = useState(false);
+const handleClickShowPassword = () => setShowPassword(!showPassword);
+const handleMouseDownPassword = () => setShowPassword(!showPassword);
     return (
         <div>
             <h1 style={{textAlign:"center"}}>#for logo</h1>
@@ -19,6 +24,19 @@ const SuperAdmin = () => {
                     />
 
                     <TextField id="Password" label="Password" variant="filled" helperText="Specified Password" 
+                      InputProps={{ // <-- This is where the toggle button is added.
+                        endAdornment: (
+                          <InputAdornment position="end">
+                            <IconButton
+                                aria-label="toggle password visibility"
+                              onClick={handleClickShowPassword}
+                              onMouseDown={handleMouseDownPassword}
+                            >
+                              {showPassword ? <Visibility /> : <VisibilityOff />}
+                            </IconButton>
+                          </InputAdornment>
+                        )
+                        }}
                     />
                 </CardActions>
 
