@@ -1,15 +1,18 @@
 import styles from '../../styles/Home.module.css'
-import { Card, CardActions, TextField, ButtonBase, createTheme} from '@material-ui/core';
+import { Card, CardActions, TextField, ButtonBase} from '@material-ui/core';
 import Arrow from "@material-ui/icons/SendOutlined"
 import { useState } from 'react';
 import cogoToast from 'cogo-toast';
 
 const StudentAuth = () => {
     const [details, setDetails] = useState({rollNo: "", dept: ""});
-    const [err, setErr] = useState({rollNo: 'primary', dept: 'primary'});
 
     const loginHandler = async () => {    
         //api call
+    }
+
+    const validation = () => {
+        //validaation
     }
 
     return (
@@ -23,7 +26,6 @@ const StudentAuth = () => {
                 <TextField fullWidth id="RollNo" label="RollNo" variant="filled" helperText="Eg: 19CSR116" 
                 value={details.rollNo.trim()}
                 onChange={(e) => setDetails({...details, rollNo: e.target.value})}
-                color={err.rollNo}
                 autoFocus={true}
                 inputProps={{ maxLength: 8 }}
                 />
@@ -31,7 +33,6 @@ const StudentAuth = () => {
                 <TextField fullWidth id="Department" label="Department" variant="filled" helperText="Eg: CSE"
                 value={details.dept.trim()}
                 onChange={(e) => setDetails({...details, dept: e.target.value})}
-                color={err.dept}
                 inputProps={{ maxLength: 5 }}
                 />
             </CardActions>
