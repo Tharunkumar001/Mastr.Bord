@@ -20,7 +20,7 @@ const StudentAuth = () => {
         <h1 style={{textAlign:"center"}}>Student</h1>
             <CardActions className={styles.profileLoginCardAction}>
 
-                <TextField id="RollNo" label="RollNo" variant="filled" helperText="Eg: 19CSR116" 
+                <TextField fullWidth id="RollNo" label="RollNo" variant="filled" helperText="Eg: 19CSR116" 
                 value={details.rollNo.trim()}
                 onChange={(e) => setDetails({...details, rollNo: e.target.value})}
                 color={err.rollNo}
@@ -28,7 +28,7 @@ const StudentAuth = () => {
                 inputProps={{ maxLength: 8 }}
                 />
 
-                <TextField id="Department" label="Department" variant="filled" helperText="Eg: CSE"
+                <TextField fullWidth id="Department" label="Department" variant="filled" helperText="Eg: CSE"
                 value={details.dept.trim()}
                 onChange={(e) => setDetails({...details, dept: e.target.value})}
                 color={err.dept}
