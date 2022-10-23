@@ -3,7 +3,6 @@ import styles from '../styles/Home.module.css'
 import {IconButton,} from '@material-ui/core';
 import { useRouter } from 'next/router'
 import { useState } from 'react';
-import AuthPage from './AuthPage';
 import React from 'react';
 
 
