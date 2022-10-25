@@ -1,4 +1,8 @@
-import { Card, CardContent, CardHeader, makeStyles, Typography } from '@material-ui/core'
+import { Button, Card, CardContent, CardHeader, Collapse, IconButton, List, ListItem, ListItemIcon, ListItemText, ListSubheader, makeStyles, Typography } from '@material-ui/core'
+import { Comment, CommentOutlined, ExpandLess, ExpandMore, StarBorder } from '@material-ui/icons';
+import { useState } from 'react';
+import ReactCardFlip from 'react-card-flip';
+import AvatarImage from './components/Avatar';
 
 const useStyles = makeStyles((theme) => ({
     card: {
@@ -7,38 +11,60 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
         display: 'flex',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        
     },
 
     root: {
         display: 'flex',
         justifyContent: 'center',
+        paddingTop: '5rem'
+    },
+
+    btn: {
+        padding: '1rem',
+        borderRadius: '0.4rem',
+        
     }
 }))
 
 function StudentPage() {
+    const [flip, setFlip] = useState(false);
     const styles = useStyles();
+
+    function handleClick(e) {
+        e.preventDefault();
+        setFlip(!flip);
+    }
+
     return(
         <div className={styles.root}>
-            <h2 style={{color:"white"}}>for logo</h2>
 
             <Card className={styles.card}>
-                <CardContent>
-                    <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                    Word of the Day
-                    </Typography>
-                    <Typography variant="h5" component="div">
-                    
-                    </Typography>
-                    <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                    adjective
-                    </Typography>
-                    <Typography variant="body2">
-                    well meaning and kindly.
-                    <br />
-                    {'"a benevolent smile"'}
-                    </Typography>
-                </CardContent>
+            <ReactCardFlip isFlipped={flip} flipDirection="horizontal">
+                <div>
+                    <AvatarImage />
+                    <h4>Students Stats</h4>
+                    <button onClick={handleClick} className={styles.btn}>
+                        Click to flip
+                    </button>
+                </div>
+
+                <div>
+                <List>
+                    {[['D','t','s'],[1, 2, 3]].map((value,index) => (
+                        <ListItem
+                            key={value}
+                        >
+                        <ListItemText primary={`${value[0][0]} ${value[0][0]}`} />
+                        </ListItem>
+                    ))}
+                    </List>
+                    <button onClick={handleClick} className={styles.btn}>
+                        Flip to stats
+                    </button>
+                </div>
+            </ReactCardFlip>
                 
                 </Card>
         </div>

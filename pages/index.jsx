@@ -11,7 +11,7 @@ const Home = () => {
 
   const containerHandler = (containerValue) => {
     localStorage.setItem("container",containerValue);
-    router.push("/AuthPage");
+    router.push("/authPage");
   }
 
   return (
