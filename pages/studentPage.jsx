@@ -1,14 +1,13 @@
 import { Button, Card, CardContent, CardHeader, Collapse, IconButton, List, ListItem, ListItemIcon, ListItemText, ListSubheader, makeStyles, Typography } from '@material-ui/core'
-import { Comment, CommentOutlined, ExpandLess, ExpandMore, StarBorder } from '@material-ui/icons';
+import { Comment, CommentOutlined, ExpandLess, ExpandMore, ListAlt, StarBorder } from '@material-ui/icons';
 import { useState } from 'react';
 import ReactCardFlip from 'react-card-flip';
 import AvatarImage from './components/Avatar';
 
 const useStyles = makeStyles((theme) => ({
     card: {
-        width: 'fit-content',
+        width: 'max-content',
         padding: '1rem',
-        textAlign: 'center',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -25,6 +24,19 @@ const useStyles = makeStyles((theme) => ({
         padding: '1rem',
         borderRadius: '0.4rem',
         
+    },
+
+    backCard: {
+        padding: '0.4rem'
+    },
+
+    ul: {
+        listStyleType: "square",
+        display: 'flex',
+        gap: '1rem',
+        flexDirection: 'column',
+        fontSize: '1.3rem',
+        fontWeight: 'bold'
     }
 }))
 
@@ -50,16 +62,14 @@ function StudentPage() {
                     </button>
                 </div>
 
-                <div>
-                <List>
-                    {[['D','t','s'],[1, 2, 3]].map((value,index) => (
-                        <ListItem
-                            key={value}
-                        >
-                        <ListItemText primary={`${value[0][0]} ${value[0][0]}`} />
-                        </ListItem>
-                    ))}
-                    </List>
+                <div className={styles.backCard}>
+                    <h4>show sem details</h4>
+                    <ul className={styles.ul}>
+                        <li>Days</li>
+                        <li>Present</li>
+                        <li>Absent</li>
+                        <li>Percentage</li>
+                    </ul>
                     <button onClick={handleClick} className={styles.btn}>
                         Flip to stats
                     </button>
