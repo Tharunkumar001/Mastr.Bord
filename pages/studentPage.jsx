@@ -51,32 +51,7 @@ function StudentPage() {
 
     return(
         <div className={styles.root}>
-
-            <Card className={styles.card}>
-            <ReactCardFlip isFlipped={flip} flipDirection="horizontal">
-                <div>
-                    <AvatarImage />
-                    <h4>Students Stats</h4>
-                    <button onClick={handleClick} className={styles.btn}>
-                        Click to flip
-                    </button>
-                </div>
-
-                <div className={styles.backCard}>
-                    <h4>show sem details</h4>
-                    <ul className={styles.ul}>
-                        <li>Days</li>
-                        <li>Present</li>
-                        <li>Absent</li>
-                        <li>Percentage</li>
-                    </ul>
-                    <button onClick={handleClick} className={styles.btn}>
-                        Flip to stats
-                    </button>
-                </div>
-            </ReactCardFlip>
-                
-                </Card>
+            
         </div>
     )
 }
