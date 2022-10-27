@@ -1,12 +1,34 @@
-import styles from "../../styles/Home.module.css";
+import { Card, CardHeader } from "@material-ui/core";
+import { makeStyles, StylesContext } from "@material-ui/styles";
+import { useState } from "react";
+import ReactCardFlip from "react-card-flip";
 
-function Card({onClick}) {
+const useStyles = makeStyles((theme) => ({
+    rootCard:{
+        width: '250px',
+        height: '400px'
+    }
+}))
+
+const FlipCard = () => {
+    const [flip, setFlip] = useState(false);
+    const classes = useStyles();
+
     return (
-        <div className={styles.card} onClick={onClick}>
-            <div className={styles.cardback}>Back</div>
-            <div className={styles.cardfront}>Front</div>
+        <div>
+            <ReactCardFlip isFlipped={flip} 
+                flipDirection="vertical">
+                    
+                    <Card className={classes.rootCard}>
+                        <h1>front</h1>
+                    </Card>
+
+                    <Card className={classes.rootCard}>
+                        <h1>front</h1>
+                    </Card>
+            </ReactCardFlip>
         </div>
     );
 }
 
-export default Card;
+export default FlipCard;

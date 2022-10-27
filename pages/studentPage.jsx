@@ -1,8 +1,9 @@
-import { Button, Card, CardContent, CardHeader, Collapse, IconButton, List, ListItem, ListItemIcon, ListItemText, ListSubheader, makeStyles, Typography } from '@material-ui/core'
+import { Button, CardContent, CardHeader, Collapse, IconButton, List, ListItem, ListItemIcon, ListItemText, ListSubheader, makeStyles, Typography } from '@material-ui/core'
 import { Comment, CommentOutlined, ExpandLess, ExpandMore, ListAlt, StarBorder } from '@material-ui/icons';
 import { useState } from 'react';
 import ReactCardFlip from 'react-card-flip';
 import AvatarImage from './components/Avatar';
+import Card from "./card/card";
 
 const useStyles = makeStyles((theme) => ({
     card: {
@@ -51,7 +52,7 @@ function StudentPage() {
 
     return(
         <div className={styles.root}>
-            
+            <Card />
         </div>
     )
 }
