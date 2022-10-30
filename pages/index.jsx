@@ -4,6 +4,7 @@ import {IconButton,} from '@material-ui/core';
 import { useRouter } from 'next/router'
 import { useState } from 'react';
 import React from 'react';
+import LoadingComponent from './Loading/loadingComponent';
 
 
 const Home = () => {
