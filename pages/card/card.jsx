@@ -9,14 +9,13 @@ import React from "react";
 const useStyles = makeStyles((theme) => ({
     root:{
         display:'flex',
-        justifyContent:'center',
         alignItems: 'center',
-        paddingTop: '3rem'
+        flexDirection:'column'
     },
     rootCard:{
         backgroundImage:`url(${backgroundImage})`,
         width:'250px', 
-        height:'70vh',
+        height:'fit-content',
     },
 
     innerCard: {
@@ -24,25 +23,24 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'row',
         gap: '1rem',
         margin: '0.2rem',
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
 
     progress:{
-        margin:'0.2rem'
+        margin:'0.5rem'
     }
 }));
 
     function LinearProgressWithLabel(props) {
         return (
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Box sx={{ width: '100%', mr: 1 }}>
+            
             <LinearProgress variant="determinate" {...props} />
-            </Box>
-            <Box sx={{ minWidth: 35 }}>
+            
             <Typography variant="body2" color="text.secondary">{`${Math.round(
                 props.value,
             )}%`}</Typography>
-            </Box>
+            
         </Box>
         );
     }
@@ -54,18 +52,12 @@ LinearProgressWithLabel.propTypes = {
 const FlipCard = () => {
     const classes = useStyles();
 
-    const [progress, setProgress] = useState(8);
+    const [progress, setProgress] = useState(80);
 
-    React.useEffect(() => {
-        const timer = setInterval(() => {
-            setProgress((prevProgress) => (prevProgress >= 100 ? 10 : prevProgress + 10));
-        }, 800);
-        return () => {
-            clearInterval(timer);
-        };
-    }, []);
+
     return (
         <div className={classes.root}>
+            <h2>#for logo</h2>
             <Card className={classes.rootCard}>
                 <CardMedia
                     component="img"
@@ -78,16 +70,17 @@ const FlipCard = () => {
                     subheader="Sem details"
                 />
                 <div className={classes.innerCard}>
-                    <Card style={{width:'fit-content',}}>
+                    <Card style={{width:'fit-content', borderRadius: '1rem', boxShadow: '3px #888888'}}>
                         <CardHeader
                             title="total"
                             subheader="44"
                         />
                     </Card>
 
-                    <Card style={{width:'fit-content',}}>
+                    <Card style={{width:'fit-content',borderRadius: '1rem',  boxShadow: '1px #888888'
+}}>
                         <CardHeader
-                            title="total"
+                            title="present"
                             subheader="44"
                         />
                     </Card>
