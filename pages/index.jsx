@@ -4,15 +4,17 @@ import {IconButton,} from '@material-ui/core';
 import { useRouter } from 'next/router'
 import { useState } from 'react';
 import React from 'react';
-import LoadingComponent from './Loading/loadingComponent';
+import LoadingComponent from './components/loadingComponent';
 
 
 const Home = () => {
   const router = useRouter()
+  const [loading, setLoading] = useState(false);
 
-  const containerHandler = (containerValue) => {
+  const containerHandler = async(containerValue) => {
+    setLoading(!loading)
     localStorage.setItem("container",containerValue);
-    router.push("/authPage");
+    await router.push("/authPage");
   }
 
   return (
@@ -31,7 +33,11 @@ const Home = () => {
         <a href="https://velalarengg.ac.in/">
             <h2>V C E T</h2>
         </a>
-        
+
+        {(loading)?  <div className={styles.loading}>
+          <LoadingComponent />
+        </div> : null}
+
         <div className={styles.grid}>
           <button className={styles.card} onClick = {() => containerHandler("admin")}>
             <h2>Admin &rarr;</h2>
@@ -50,7 +56,6 @@ const Home = () => {
         </div>
 
       </main>
-
 
 
       <footer className={styles.footer}>
