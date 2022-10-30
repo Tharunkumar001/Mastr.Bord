@@ -1,44 +1,14 @@
-import { Button, CardContent, CardHeader, Collapse, IconButton, List, ListItem, ListItemIcon, ListItemText, ListSubheader, makeStyles, Typography } from '@material-ui/core'
-import { Comment, CommentOutlined, ExpandLess, ExpandMore, ListAlt, StarBorder } from '@material-ui/icons';
+import { makeStyles } from '@material-ui/core';
 import { useState } from 'react';
-import ReactCardFlip from 'react-card-flip';
-import AvatarImage from './components/Avatar';
 import Card from "./card/card";
 
 const useStyles = makeStyles((theme) => ({
-    card: {
-        width: 'max-content',
-        padding: '1rem',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        
-    },
+
 
     root: {
         display: 'flex',
         justifyContent: 'center',
-        paddingTop: '5rem'
     },
-
-    btn: {
-        padding: '1rem',
-        borderRadius: '0.4rem',
-        
-    },
-
-    backCard: {
-        padding: '0.4rem'
-    },
-
-    ul: {
-        listStyleType: "square",
-        display: 'flex',
-        gap: '1rem',
-        flexDirection: 'column',
-        fontSize: '1.3rem',
-        fontWeight: 'bold'
-    }
 }))
 
 function StudentPage() {
