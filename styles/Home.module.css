@@ -268,3 +268,24 @@
     transform: rotate(360deg);
   }
 }
+
+/*superAdmin*/
+
+.superAdminCardRoot {
+  width:90%;
+  height: 80hv;
+  margin:1rem;
+  margin-right:auto;
+  margin-left:auto
+}
+
+.superAdminCard {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 480px) {
+  .superAdminCard {
+    flex-direction: row
+  }
+}
