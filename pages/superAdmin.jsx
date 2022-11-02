@@ -8,7 +8,6 @@ import Dashboard from "./components/Dashboard";
 import styles from "../styles/Home.module.css";
 
 const useStyles = makeStyles((theme) => ({
-
     btn:{
             font: "1em Arial, sans-serif",
             display: "inline-block",
