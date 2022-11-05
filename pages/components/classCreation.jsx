@@ -3,18 +3,7 @@ import { useState } from "react";
 import styles from "../../styles/Home.module.css";
 
 import React from 'react';
-import RangeSlider from 'react-bootstrap-range-slider';
 
-const currencies = [
-    {
-        value: 'CSE',
-        label: 'CSE',
-    },
-    {
-        value: 'IT',
-        label: 'IT',
-    },
-    ];
 
 const useStyles = makeStyles((theme) => ({
     pairOne:{
@@ -39,7 +28,7 @@ const ClassCreation = () => {
 
     const classes = useStyles();
     const [ value, setValue ] = useState(10); 
-    const [form, setForm] = React.useState({count:0, dept:'CSE', startRno:1, Section:'A', YearOfStudy:4, });
+    const [form, setForm] = React.useState({count:0, dept:'CSE', startRno:1, section:'A', yearOfStudy:4, oddOrEven:'ODD' });
 
     const handleChange = (event) => {
         setCurrency(event.target.value);
@@ -68,16 +57,14 @@ const ClassCreation = () => {
                                     id="outlined-basic"
                                     select
                                     label="Select"
-                                    value={currency}
-                                    onChange={() => {
-                                        
-                                    }}
+                                    value={form.dept}
+                                    onChange={(e) => setForm({...form, dept: e.target.value})}
                                     helperText="Please select your department"
                                     variant="outlined"
                                 >
-                                {currencies.map((option) => (
-                                    <MenuItem key={option.value} value={option.value}>
-                                    {option.label}
+                                {['CSE','IT'].map((option,index) => (
+                                    <MenuItem key={index} value={option}>
+                                    {option}
                                     </MenuItem>
                                 ))}
                             </TextField>                            
@@ -88,10 +75,8 @@ const ClassCreation = () => {
                                     id="outlined-basic"
                                     select
                                     label="Select"
-                                    value="ODD/EVEN"
-                                    onChange={() => {
-
-                                    }}
+                                    value={form.oddOrEven}
+                                    onChange={(e) => setForm({...form, oddOrEven: e.target.value})}
                                     helperText="Please select sem details"
                                     variant="outlined"
                                 >
@@ -106,12 +91,38 @@ const ClassCreation = () => {
 
                         <div className={classes.pairOne}>
                             <div>
-                                <TextField id="outlined-basic" label="Outlined" variant="outlined" />
-                            </div>
+                            <TextField
+                                    id="outlined-basic"
+                                    select
+                                    label="Select"
+                                    value={form.section}
+                                    onChange={(e) => setForm({...form, section: e.target.value})}
+                                    helperText="Please select section of class"
+                                    variant="outlined"
+                                >
+                                {["A","B"].map((option,index) => (
+                                    <MenuItem key={index} value={option}>
+                                    {option}
+                                    </MenuItem>
+                                ))}
+                            </TextField>                                 </div>
                             
                             <div>
-                                <TextField id="outlined-basic" label="Outlined" variant="outlined" />
-                            </div>
+                            <TextField
+                                    id="outlined-basic"
+                                    select
+                                    label="Select"
+                                    value={form.yearOfStudy}
+                                    onChange={(e) => setForm({...form, yearOfStudy: e.target.value})}
+                                    helperText="Please select year of study"
+                                    variant="outlined"
+                                >
+                                {[1,2,3,4].map((option,index) => (
+                                    <MenuItem key={index} value={option}>
+                                    {option}
+                                    </MenuItem>
+                                ))}
+                            </TextField>                                 </div>
                         </div>
                     </form>
                 </div>
