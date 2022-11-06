@@ -16,7 +16,8 @@
     "next": "12.3.1",
     "react": "18.2.0",
     "react-bootstrap-range-slider": "^3.0.8",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-edit-text": "^5.0.2"
   },
   "devDependencies": {
     "eslint": "8.25.0",
