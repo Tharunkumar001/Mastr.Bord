@@ -1,4 +1,4 @@
-import { Box, Card, CardHeader, makeStyles, MenuItem, TextField } from "@material-ui/core";
+import { Box, Button, Card, CardHeader, Dialog, DialogActions, DialogContent, DialogTitle, makeStyles, MenuItem, TextField } from "@material-ui/core";
 import { useState } from "react";
 import styles from "../../styles/Home.module.css";
 
@@ -25,7 +25,10 @@ const useStyles = makeStyles((theme) => ({
         display:"flex",
         justifyContent:"center",
         alignItems:"center",
+    },
 
+    submitBtn:{
+        paddingTop:'0.5rem'
     }
 
 }))
@@ -44,7 +47,11 @@ const ClassCreation = () => {
         return { value: item };
     });
 
-    const rollNo = [1,60,61,62,63,64,65,66,67,68,69,70]
+    const rollNo = [1,60,61,62,63,64,65,66,67,68,69,70];
+
+    const handleSubmit = () => {
+
+    }
     return(
         
         <div>
@@ -155,11 +162,39 @@ const ClassCreation = () => {
                                 </MenuItem>
                             ))}
                         </TextField>
+                        
                     </div>
+
+                    <div className={classes.pairOne}>
+                        <Button className={classes.submitBtn} onClick={handleSubmit}>
+                            Submit
+                        </Button>
+                    </div>
+                    
                     </Box>
+                    
                     </form>
                 </div>
+                
             </Card>
+
+            <Dialog
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+            >
+                <DialogTitle className={styles.alertDialogTitle}>
+                    
+                </DialogTitle>
+                
+                
+                <DialogActions>
+                    <Button onClick={handleClose} autoFocus>
+                        Close
+                    </Button>
+                </DialogActions>
+            </Dialog>
         </div>
         
     )
