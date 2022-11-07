@@ -4,6 +4,7 @@ import styles from "../../styles/Home.module.css";
 
 import React from 'react';
 import * as _ from "lodash";
+import LoadingComponent from "./loadingComponent";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -29,6 +30,14 @@ const useStyles = makeStyles((theme) => ({
 
     submitBtn:{
         paddingTop:'0.5rem'
+    },
+
+    ol:{
+        listStyle:"none",
+
+        '& li':{
+            padding:'0.2rem'
+        }
     }
 
 }))
@@ -43,6 +52,7 @@ const ClassCreation = () => {
     var year = date.getFullYear();
 
     const [form, setForm] = React.useState({count:1, dept:'CSE', startRno:1, section:'A', yearOfStudy:4, oddOrEven:'ODD',passedOut:year });
+    const [loading, setLoading] = useState(true);
 
     const handleChange = (event) => {
         setCurrency(event.target.value);
@@ -194,15 +204,12 @@ const ClassCreation = () => {
 
                     <div className={classes.pairOne}>
                         <Button className={classes.submitBtn} onClick={handleOpen}>
-                            Submit
+                            Done
                         </Button>
                     </div>
-                    
                     </Box>
-                    
                     </form>
                 </div>
-                
             </Card>
 
             <Dialog
@@ -214,21 +221,50 @@ const ClassCreation = () => {
                 <DialogTitle className={styles.alertDialogTitle}>
                     <h2>{`${form.dept} - ${form.section} - ${form.yearOfStudy} - ${form.passedOut}`}</h2>
                 </DialogTitle>
-                
-                <DialogContent>
-                    <Card>
-                        <CardHeader title='Verify your details'/>
 
+                <DialogContent>
+                    
+                    <Card style={{backgroundColor:'grey'}}>
                         <CardContent>
-                            
+                            <ol className={classes.ol}>
+                                <li>
+                                    Class Strength : {form.count}
+                                </li>
+                                <li>
+                                    Starting R.No. : {form.startRno}
+                                </li>
+                                <li>
+                                    Department  : {form.dept}
+                                </li>
+                                <li>
+                                    Section : {form.section}
+                                </li>
+                                <li>
+                                    Semaster : {form.oddOrEven}
+                                </li>
+                                <li>
+                                    Year of study : {form.yearOfStudy}
+                                </li>
+                                <li>
+                                    PassedOut year : {form.passedOut}
+                                </li>
+                            </ol>
                         </CardContent>
                     </Card>
                 </DialogContent>
+                {(loading)?  <div className={styles.loading}>
+                        <LoadingComponent />
+                    </div> : null}
                 <DialogActions>
+                    <Button onClick={handleSubmit} autoFocus>
+                        Submit
+                    </Button>
                     <Button onClick={handleClose} autoFocus>
                         Close
                     </Button>
+                    
                 </DialogActions>
+                
             </Dialog>
         </div>
         

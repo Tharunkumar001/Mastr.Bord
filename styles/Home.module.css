@@ -254,13 +254,14 @@
 .ldsdualring:after {
   content: " ";
   display: block;
-  width: 64px;
-  height: 64px;
+  width: 44px;
+  height: 44px;
   margin: 8px;
   border-radius: 50%;
   border: 6px solid rgb(12, 10, 10);
   border-color: rgb(19, 14, 14) transparent rgb(29, 21, 21) transparent;
   animation: ldsdualring 1.2s linear infinite;
+  
 }
 @keyframes ldsdualring {
   0% {
