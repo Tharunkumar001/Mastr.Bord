@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardHeader, Dialog, DialogActions, DialogContent, DialogTitle, makeStyles, MenuItem, TextField } from "@material-ui/core";
+import { Box, Button, Card, CardContent, CardHeader, Dialog, DialogActions, DialogContent, DialogTitle, makeStyles, MenuItem, TextField } from "@material-ui/core";
 import { useState } from "react";
 import styles from "../../styles/Home.module.css";
 
@@ -36,16 +36,25 @@ const useStyles = makeStyles((theme) => ({
 const ClassCreation = () => {
 
     const classes = useStyles();
-    const [ value, setValue ] = useState(10); 
-    const [form, setForm] = React.useState({count:0, dept:'CSE', startRno:1, section:'A', yearOfStudy:4, oddOrEven:'ODD' });
+    const [ value, setValue ] = useState(10);
+    const [open, setOpen] = useState(false);
+
+    const date = new Date();
+    var year = date.getFullYear();
+
+    const [form, setForm] = React.useState({count:1, dept:'CSE', startRno:1, section:'A', yearOfStudy:4, oddOrEven:'ODD',passedOut:year });
 
     const handleChange = (event) => {
         setCurrency(event.target.value);
     };
 
-    const count = _.range(1, 66).map((item) => {
-        return { value: item };
-    });
+    const handleClose = () => {
+        setOpen(false);
+    }
+    
+    const handleOpen = () => {
+        setOpen(true);
+    }
 
     const rollNo = [1,60,61,62,63,64,65,66,67,68,69,70];
 
@@ -77,9 +86,9 @@ const ClassCreation = () => {
                             onChange={(e) => setForm({...form, count:e.target.value})}
                             helperText="Please select valid details"
                             >
-                            {count.map((option,ind) => (
-                                <MenuItem key={ind} value={option.value}>
-                                    {option.value}
+                            {_.range(1, 66).map((option,ind) => (
+                                <MenuItem key={ind} value={option}>
+                                    {option}
                                 </MenuItem>
                             ))}
                         </TextField>
@@ -166,7 +175,25 @@ const ClassCreation = () => {
                     </div>
 
                     <div className={classes.pairOne}>
-                        <Button className={classes.submitBtn} onClick={handleSubmit}>
+                        <TextField
+                            id="outlined-select-currency"
+                            variant="filled"
+                            select
+                            label="PassedOut"
+                            value={form.passedOut}
+                            onChange={(e) => setForm({...form, yearOfStudy:e.target.value})}
+                            helperText="Please select valid details"
+                        >
+                            {_.range(year-4,year+8).map((option) => (
+                                <MenuItem key={option} value={option}>
+                                    {option}
+                                </MenuItem>
+                            ))}
+                        </TextField>
+                    </div>
+
+                    <div className={classes.pairOne}>
+                        <Button className={classes.submitBtn} onClick={handleOpen}>
                             Submit
                         </Button>
                     </div>
@@ -185,10 +212,18 @@ const ClassCreation = () => {
                 aria-describedby="alert-dialog-description"
             >
                 <DialogTitle className={styles.alertDialogTitle}>
-                    
+                    <h2>{`${form.dept} - ${form.section} - ${form.yearOfStudy} - ${form.passedOut}`}</h2>
                 </DialogTitle>
                 
-                
+                <DialogContent>
+                    <Card>
+                        <CardHeader title='Verify your details'/>
+
+                        <CardContent>
+                            
+                        </CardContent>
+                    </Card>
+                </DialogContent>
                 <DialogActions>
                     <Button onClick={handleClose} autoFocus>
                         Close
