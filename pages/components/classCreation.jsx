@@ -52,7 +52,7 @@ const ClassCreation = () => {
     var year = date.getFullYear();
 
     const [form, setForm] = React.useState({count:1, dept:'CSE', startRno:1, section:'A', yearOfStudy:4, oddOrEven:'ODD',passedOut:year });
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     const handleChange = (event) => {
         setCurrency(event.target.value);
@@ -221,7 +221,15 @@ const ClassCreation = () => {
                 <DialogTitle className={styles.alertDialogTitle}>
                     <h2>{`${form.dept} - ${form.section} - ${form.yearOfStudy} - ${form.passedOut}`}</h2>
                 </DialogTitle>
-
+                
+                <DialogContent style={{
+                    display:"flex",
+                    justifyContent:"center"
+                }}>
+                    {(loading)?  <div className={styles.loading}>
+                        <LoadingComponent />
+                    </div> : null}
+                </DialogContent>
                 <DialogContent>
                     
                     <Card style={{backgroundColor:'grey'}}>
@@ -252,9 +260,8 @@ const ClassCreation = () => {
                         </CardContent>
                     </Card>
                 </DialogContent>
-                {(loading)?  <div className={styles.loading}>
-                        <LoadingComponent />
-                    </div> : null}
+
+                
                 <DialogActions>
                     <Button onClick={handleSubmit} autoFocus>
                         Submit
