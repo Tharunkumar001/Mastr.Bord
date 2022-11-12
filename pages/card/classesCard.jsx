@@ -3,17 +3,18 @@ import React from "react";
 
 function ClassCard({ Component, pageProps }) {
     return(
-        <div >
-            <Grid xs={12} >
-                {[1,2,3].map((e,i) => {
-                    return(
-                        <Card key={i} >
+        
+        <Grid container spacing={2}>
+            {[1,2,3,4,5].map((e,i) => {
+                return(
+                    <Grid item xs={12} sm={4} md={4} key={i} >
+                        <Card >
                             <CardHeader title="done" />
                         </Card>
-                    )
-                })}
-            </Grid>
-        </div>
+                    </Grid>
+                )
+            })}
+        </Grid>
     )
 }
 

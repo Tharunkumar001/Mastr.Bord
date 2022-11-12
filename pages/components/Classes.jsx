@@ -11,8 +11,12 @@ const Classes = () => {
     let val = 'done'
     
 return(
-    <div >̥̥
-        <ClassCard />
+    <div >
+        <div className={styles.superAdminCardRoot}>
+            <div className={styles.superAdminCard}>̥̥
+                <ClassCard />
+            </div>
+        </div>
     </div>
 )
 }
