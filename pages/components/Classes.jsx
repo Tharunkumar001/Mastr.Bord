@@ -8,14 +8,11 @@ const useStyles = makeStyles((theme) => ({
 
 const Classes = () => {
     const classes = useStyles();
-
+    let val = 'done'
+    
 return(
-    <div>
-        <Card>
-            <div>
-                {[1,2].map((e,i) => <ClassCard key={i} />)}
-            </div>
-        </Card>
+    <div >̥̥
+        <ClassCard />
     </div>
 )
 }
