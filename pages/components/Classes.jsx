@@ -8,12 +8,11 @@ const useStyles = makeStyles((theme) => ({
 
 const Classes = () => {
     const classes = useStyles();
-    let val = 'done'
     
 return(
     <div >
-        <div className={styles.superAdminCardRoot}>
-            <div className={styles.superAdminCard}>̥̥
+        <div className={styles.superAdminCardRoot}>                  
+            <div className={styles.superAdminCard}>
                 <ClassCard />
             </div>
         </div>
