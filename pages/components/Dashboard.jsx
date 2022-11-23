@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, Dialog, DialogActions, DialogContent, DialogTitle, makeStyles, MenuItem, TextField } from "@material-ui/core";
+import { Card, CardContent, CardHeader, Dialog, DialogActions, DialogContent, DialogTitle, Divider, makeStyles, MenuItem, TextField } from "@material-ui/core";
 import { useState } from "react";
 import { Button } from "react-bootstrap";
 import styles from "../../styles/Home.module.css";
@@ -18,8 +18,18 @@ const useStyles = makeStyles((theme) => ({
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center bottom",
             transition:" all .2s ease-out",
-
     },
+    navBtnDiv:{
+        display:"flex",
+        flexDirection:"row",
+        gap:"1rem",
+        justifyContent:"center",
+        alignItems:"center",
+        paddingTop:"1rem"
+    },
+    navBtn:{
+        borderRadius:"50%"
+    }
 }));
 
 const Dashboard = () => {
@@ -49,15 +59,23 @@ const Dashboard = () => {
     <div>
         <Card className={styles.superAdminCardRoot}>
             <div className={styles.superAdminCard}>
-                <CardHeader title="@dashboard" subheader="sueperadmin@gmail.com" />
-                
-                <CardContent>
-                <Button className={classes.submitBtn} onClick={handleOpen}>
-                    Access
-                </Button>
-                
+                <CardContent style={{display:"flex", flexDirection:"row"}}>
+                    <CardHeader title="@dashboard" subheader="sueperadmin@gmail.com" />
+                    <Button className={classes.submitBtn} onClick={handleOpen}>
+                        Access
+                    </Button>
                 </CardContent>
                 
+                <CardContent>
+                <Divider />
+                
+                <div className={classes.navBtnDiv}>
+                    <Button className={classes.navBtn}></Button>
+                    <Button className={classes.navBtn}></Button>
+                    <Button className={classes.navBtn}></Button>
+                    <Button className={classes.navBtn}></Button>
+                </div>
+                </CardContent>
             </div>
         </Card>
 

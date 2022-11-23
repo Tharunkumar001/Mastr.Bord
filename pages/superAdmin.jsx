@@ -9,22 +9,29 @@ import styles from "../styles/Home.module.css";
 
 const useStyles = makeStyles((theme) => ({
     btn:{
-            font: "1em Arial, sans-serif",
-            display: "inline-block",
-            padding: "1em",
-            margin: "1em",
-            textDecoration: "none",
-            
-            backgroundImage: "linear-gradient(dodgerblue, dodgerblue), linear-gradient(silver, silver)",
-            backgroundSize:" 0 5px, auto",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center bottom",
-            transition:" all .2s ease-out",
+        font: "1em Arial, sans-serif",
+        display: "inline-block",
+        padding: "1em",
+        margin: "1em",
+        textDecoration: "none",
+        
+        backgroundImage: "linear-gradient(dodgerblue, dodgerblue), linear-gradient(silver, silver)",
+        backgroundSize:" 0 5px, auto",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center bottom",
+        transition:" all .2s ease-out",
 
-            "&:hover":{
-                backgroundSize: "100% 5px, auto",
-            }
+        "&:hover":{
+            backgroundSize: "100% 5px, auto",
+        }
     },
+    superAdminCard:{  
+        display:"flex", 
+        flexDirection:"column",
+        [theme.breakpoints.up('sm')]: {
+            flexDirection:"row",
+        },
+    }
 
 }))
 
@@ -44,7 +51,7 @@ const SuperAdmin = () => {
         <div className={styles.superAdminCardRoot}>
             <h3>#for logo</h3>
             <Card className={classes.rootCard}>
-                <div className={styles.superAdminCard}>
+                <div className={classes.superAdminCard} style={{}}>
                     <CardHeader title="@username" subheader="sueperadmin@gmail.com" />
 
                     <div style={{display:'flex',alignItems:'center',justifyContent:'center',gap:'1rem'}}>
