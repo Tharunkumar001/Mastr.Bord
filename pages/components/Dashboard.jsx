@@ -5,6 +5,9 @@ import styles from "../../styles/Home.module.css";
 import CoAdmin from "../Form/CoAdmin";
 import FacultyAdmin from "../Form/FacultyAdmin";
 import { BorderColor, LaptopWindows, PersonAdd, PersonPinCircle } from "@material-ui/icons";
+import ClassStats from "./Stats/ClassStats";
+import CreationStats from "./Stats/CreationStats";
+import Grievence from "./Stats/Grievence";
 
 const useStyles = makeStyles((theme) => ({
     submitBtn:{
@@ -29,6 +32,8 @@ const useStyles = makeStyles((theme) => ({
         paddingTop:"1rem"
     },
     navBtn:{
+        padding:"0.3rem",
+        borderRadius:"0.4rem"
     }
 }));
 
@@ -37,6 +42,7 @@ const Dashboard = () => {
     const [data,setData] = useState({coAdmin:'',classAdmin:''});
     const [open, setOpen] = useState(false);
     const [form, setForm] = useState("Select Access Form");
+    const [stats, setStats] = useState();
 
     const handleAccess = () => {
 
@@ -70,16 +76,20 @@ const Dashboard = () => {
                 <Divider />
                 
                 <div className={classes.navBtnDiv}>
-                    <Button className={classes.navBtn}>
+                    <Button className={classes.navBtn} onClick={() => setStats(<ClassStats />)}>
                         Class
                     </Button>
-                    <Button className={classes.navBtn}>
+                    <Button className={classes.navBtn} onClick={() => setStats(<CreationStats />)}>
                         Creation
                     </Button>
-                    <Button className={classes.navBtn}>
+                    <Button className={classes.navBtn} onClick={() => setStats(<Grievence />)}>
                         Grievence
                     </Button>
                 </div>
+                </CardContent>
+
+                <CardContent>
+                    {stats}
                 </CardContent>
             </div>
         </Card>
