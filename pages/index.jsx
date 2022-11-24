@@ -54,21 +54,17 @@ const Home = () => {
             <p>Get your daily stats through Mastr.Bord.</p>
           </button>
         </div>
-
       </main>
 
 
       <footer className={styles.footer}>
-        
-          
-          <IconButton style={{background:"none"}} >
-            About
-          </IconButton>
+        <IconButton style={{background:"none"}} >
+          About
+        </IconButton>
 
-          <IconButton style={{background:"none"}}>
-            Contact Us
-          </IconButton>
-        
+        <IconButton style={{background:"none"}}>
+          Contact Us
+        </IconButton>
       </footer>
     </div>
   )

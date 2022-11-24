@@ -4,6 +4,7 @@ import { Button } from "react-bootstrap";
 import styles from "../../styles/Home.module.css";
 import CoAdmin from "../Form/CoAdmin";
 import FacultyAdmin from "../Form/FacultyAdmin";
+import { BorderColor, LaptopWindows, PersonAdd, PersonPinCircle } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
     submitBtn:{
@@ -28,7 +29,6 @@ const useStyles = makeStyles((theme) => ({
         paddingTop:"1rem"
     },
     navBtn:{
-        borderRadius:"50%"
     }
 }));
 
@@ -70,10 +70,15 @@ const Dashboard = () => {
                 <Divider />
                 
                 <div className={classes.navBtnDiv}>
-                    <Button className={classes.navBtn}></Button>
-                    <Button className={classes.navBtn}></Button>
-                    <Button className={classes.navBtn}></Button>
-                    <Button className={classes.navBtn}></Button>
+                    <Button className={classes.navBtn}>
+                        Class
+                    </Button>
+                    <Button className={classes.navBtn}>
+                        Creation
+                    </Button>
+                    <Button className={classes.navBtn}>
+                        Grievence
+                    </Button>
                 </div>
                 </CardContent>
             </div>
