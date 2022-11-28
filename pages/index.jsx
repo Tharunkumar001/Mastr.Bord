@@ -1,14 +1,23 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css'
-import {IconButton,} from '@material-ui/core';
+import {IconButton, makeStyles,} from '@material-ui/core';
 import { useRouter } from 'next/router'
 import { useState } from 'react';
 import React from 'react';
 import LoadingComponent from './components/loadingComponent';
+import Background from "../public/mstBg.jpg";
 
+const useStyles = makeStyles((theme) => ({
+
+  root:{
+    padding: '0 2rem'
+  }
+
+}))
 
 const Home = () => {
   const router = useRouter()
+  const classes = useStyles();
   const [loading, setLoading] = useState(false);
 
   const containerHandler = async(containerValue) => {
@@ -18,7 +27,7 @@ const Home = () => {
   }
 
   return (
-    <div className={styles.container}>
+    <div className={classes.root}>
       <Head>
         <title>Mastr.Bord</title>
         <meta name="description" content="VCET MASTER ATTENDANCE SITE" />
