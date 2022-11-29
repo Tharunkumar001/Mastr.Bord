@@ -6,11 +6,14 @@ import backgroundImage from "../../public/cardBack.jpg";
 import PropTypes from 'prop-types';
 import React from "react";
 
+
 const useStyles = makeStyles((theme) => ({
     root:{
         display:'flex',
         alignItems: 'center',
-        flexDirection:'column'
+        flexDirection:'column',
+        backgroundImage:`url(${backgroundImage})`,
+        height:'fit-content',
     },
     rootCard:{
         backgroundImage:`url(${backgroundImage})`,

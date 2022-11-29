@@ -1,14 +1,25 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css'
-import {IconButton,} from '@material-ui/core';
+import {IconButton, makeStyles,} from '@material-ui/core';
 import { useRouter } from 'next/router'
 import { useState } from 'react';
 import React from 'react';
 import LoadingComponent from './components/loadingComponent';
+import Background from "../public/mstBg.jpg";
 
+const useStyles = makeStyles((theme) => ({
+
+  root:{
+    padding: '0 2rem',
+    background: "rgb(43,41,44)",
+    background:  "linear-gradient(107deg, rgba(43,41,44,1) 0%, rgba(59,135,218,1) 0%, rgba(240,242,244,1) 100%, rgba(82,111,143,0) 100%)"
+  }
+
+}))
 
 const Home = () => {
   const router = useRouter()
+  const classes = useStyles();
   const [loading, setLoading] = useState(false);
 
   const containerHandler = async(containerValue) => {
@@ -18,8 +29,8 @@ const Home = () => {
   }
 
   return (
-    <div className={styles.container}>
-      <Head>
+    <div className={classes.root}>
+      <Head style={{backgroundImage:"grey"}}>
         <title>Mastr.Bord</title>
         <meta name="description" content="VCET MASTER ATTENDANCE SITE" />
         <link rel="icon" href="/favicon.ico" />

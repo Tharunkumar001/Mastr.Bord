@@ -3,8 +3,6 @@ import { useState } from 'react';
 import Card from "./card/card";
 
 const useStyles = makeStyles((theme) => ({
-
-
     root: {
         display: 'flex',
         justifyContent: 'center',

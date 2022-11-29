@@ -118,10 +118,10 @@ const Dashboard = () => {
                 </DialogContent>
                 
                 <DialogActions>
-                    <Button onClick={handleSubmit} autoFocus>
+                    <Button onClick={handleSubmit} className={classes.navBtn} autoFocus>
                         Submit
                     </Button>
-                    <Button onClick={handleClose} autoFocus>
+                    <Button onClick={handleClose} className={classes.navBtn} autoFocus>
                         Close
                     </Button>
                     
