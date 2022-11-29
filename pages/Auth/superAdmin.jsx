@@ -57,20 +57,20 @@ const SuperAdmin = () => {
                     <TextField id="Email" label="Email" variant="filled" helperText="Eg: abc@gmail.com"
                     value={details.Email.trim()}
                     onChange={(e) => setDetails({...details, Email: e.target.value})}
-                    autoFocus={true}
+                    autoFocus={false}
                     />
 
                     <TextField id="Username" label="Username" variant="filled" helperText="Specified Username"
                     value={details.Username.trim()}
                     onChange={(e) => setDetails({...details, Username: e.target.value})}
-                    autoFocus={true}
+                    autoFocus={false}
                     inputProps={{ maxLength: 15 }} 
                     />
 
                     <TextField id="Password" label="Password" variant="filled" helperText="Specified Password"
                         value={details.Password.trim()}
                         onChange={(e) => setDetails({...details, Password: e.target.value})}
-                        autoFocus={true}
+                        autoFocus={false}
                         inputProps={{ maxLength: 15 }}
                         type={showPassword ? 'text' : 'password'}
                         // InputProps={{ // <-- This is where the toggle button is added.

@@ -105,10 +105,10 @@ const Dashboard = () => {
                 </DialogTitle>
                 
                 <DialogContent className={styles.alertDialogContent}>
-                    <Button className={classes.submitBtn} onClick={() => setForm(<CoAdmin />)}>
+                    <Button style={{borderRadius:"0.5rem",padding:"0.3rem"}} onClick={() => setForm(<CoAdmin />)}>
                         Co-Admin
                     </Button>
-                    <Button className={classes.submitBtn} onClick={() => setForm(<FacultyAdmin />)}>
+                    <Button style={{borderRadius:"0.5rem",padding:"0.3rem"}} onClick={() => setForm(<FacultyAdmin />)}>
                         Faculty Admin
                     </Button>
                 </DialogContent>

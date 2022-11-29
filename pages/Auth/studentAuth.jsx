@@ -26,7 +26,7 @@ const StudentAuth = () => {
                 <TextField fullWidth id="RollNo" label="RollNo" variant="filled" helperText="Eg: 19CSR116" 
                 value={details.rollNo.trim()}
                 onChange={(e) => setDetails({...details, rollNo: e.target.value})}
-                autoFocus={true}
+                autoFocus={false}
                 inputProps={{ maxLength: 8 }}
                 />
 
