@@ -48,7 +48,7 @@ const SuperAdmin = () => {
         }
     }
     return (
-        <div>
+        <div className={styles.rootDiv}>
             <h1 style={{textAlign:"center"}}>#for logo</h1>
 
             <Card className={styles.profileLoginCard}>

@@ -1,12 +1,13 @@
 
 .rootbackImage {
-  background: rgb(43,41,44);
-
   background: linear-gradient(107deg, rgba(43,41,44,1) 0%, rgba(59,135,218,1) 0%, rgba(240,242,244,1) 100%, rgba(82,111,143,0) 100%)
 }
 
-.container {
-  padding: 0 2rem;
+.rootDiv {
+  height:100vh;
+  width:100%;
+  background: linear-gradient(107deg, rgba(43,41,44,1) 0%, rgba(59,135,218,1) 0%, rgba(240,242,244,1) 100%, rgba(82,111,143,0) 100%);
+  overflow:hidden;
 }
 
 .main {
@@ -135,7 +136,7 @@
 /* AuthPage */
 .profileLoginCard{
   width: fit-content;
-  height: 100vh;
+  height: fit-content;
   padding: 1rem;
   border-radius: 1.5rem;
   box-sizing: border-box;
@@ -143,6 +144,7 @@
   margin-right: auto;
   margin-left: auto;
   background-image: linear-gradient(to right, #797783 0%, #928DAB  51%, #b4b4b4  100%);
+
 }
 
 .profileLoginCardAction{
