@@ -3,6 +3,7 @@ import StudentAuth from './Auth/studentAuth';
 import React from 'react';
 import AdminPage from './Auth/adminAuth';
 import SuperAdmin from './Auth/superAdmin';
+import styles from '../styles/Home.module.css'
 
 const AuthPage = () => {
 

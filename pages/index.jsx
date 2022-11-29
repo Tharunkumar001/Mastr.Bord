@@ -10,7 +10,9 @@ import Background from "../public/mstBg.jpg";
 const useStyles = makeStyles((theme) => ({
 
   root:{
-    padding: '0 2rem'
+    padding: '0 2rem',
+    background: "rgb(43,41,44)",
+    background:  "linear-gradient(107deg, rgba(43,41,44,1) 0%, rgba(59,135,218,1) 0%, rgba(240,242,244,1) 100%, rgba(82,111,143,0) 100%)"
   }
 
 }))
@@ -28,7 +30,7 @@ const Home = () => {
 
   return (
     <div className={classes.root}>
-      <Head>
+      <Head style={{backgroundImage:"grey"}}>
         <title>Mastr.Bord</title>
         <meta name="description" content="VCET MASTER ATTENDANCE SITE" />
         <link rel="icon" href="/favicon.ico" />
