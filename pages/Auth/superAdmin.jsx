@@ -54,37 +54,37 @@ const SuperAdmin = () => {
             <Card className={styles.profileLoginCard}>
             <h1 style={{textAlign:"center"}}>Super Admin</h1>
                 <CardActions className={styles.profileLoginCardAction}>
-                    <TextField fullWidth id="Email" label="Email" variant="filled" helperText="Eg: abc@gmail.com"
+                    <TextField id="Email" label="Email" variant="filled" helperText="Eg: abc@gmail.com"
                     value={details.Email.trim()}
                     onChange={(e) => setDetails({...details, Email: e.target.value})}
                     autoFocus={true}
                     />
 
-                    <TextField fullWidth id="Username" label="Username" variant="filled" helperText="Specified Username"
+                    <TextField id="Username" label="Username" variant="filled" helperText="Specified Username"
                     value={details.Username.trim()}
                     onChange={(e) => setDetails({...details, Username: e.target.value})}
                     autoFocus={true}
                     inputProps={{ maxLength: 15 }} 
                     />
 
-                    <TextField fullWidth id="Password" label="Password" variant="filled" helperText="Specified Password"
+                    <TextField id="Password" label="Password" variant="filled" helperText="Specified Password"
                         value={details.Password.trim()}
                         onChange={(e) => setDetails({...details, Password: e.target.value})}
                         autoFocus={true}
                         inputProps={{ maxLength: 15 }}
                         type={showPassword ? 'text' : 'password'}
-                        InputProps={{ // <-- This is where the toggle button is added.
-                            endAdornment: (
-                            <InputAdornment position="end">
-                                <IconButton
-                                    aria-label="toggle password visibility"
-                                    onClick={handleClickShowPassword}
-                                >
-                                    {showPassword ? <Visibility /> : <VisibilityOff />}
-                                </IconButton>
-                            </InputAdornment>
-                            )
-                        }}
+                        // InputProps={{ // <-- This is where the toggle button is added.
+                        //     endAdornment: (
+                        //     <InputAdornment position="end">
+                        //         <IconButton
+                        //             aria-label="toggle password visibility"
+                        //             onClick={handleClickShowPassword}
+                        //         >
+                        //             {showPassword ? <Visibility /> : <VisibilityOff />}
+                        //         </IconButton>
+                        //     </InputAdornment>
+                        //     )
+                        // }}
                     />
                 </CardActions>
 
