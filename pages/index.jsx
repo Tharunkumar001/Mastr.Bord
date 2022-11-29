@@ -29,7 +29,7 @@ const Home = () => {
   }
 
   return (
-    <div className={classes.root}>
+    <div className={styles.rootbackImage}>
       <Head style={{backgroundImage:"grey"}}>
         <title>Mastr.Bord</title>
         <meta name="description" content="VCET MASTER ATTENDANCE SITE" />

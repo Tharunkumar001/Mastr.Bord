@@ -12,7 +12,8 @@ const useStyles = makeStyles((theme) => ({
         "&:invalid": {
             border: "red solid 2px"
         }
-    }
+    },
+
 }));
 
 const AdminPage = () => {
@@ -57,7 +58,7 @@ const AdminPage = () => {
     }
 
     return (
-        <div>
+        <div className={styles.rootDiv}>
             <h1 style={{textAlign:"center"}}>#for logo</h1>
 
             <Card className={styles.profileLoginCard}>

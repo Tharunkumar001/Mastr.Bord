@@ -16,7 +16,7 @@ const StudentAuth = () => {
     }
 
     return (
-        <div>
+        <div className={styles.rootDiv}>
         <h1 style={{textAlign:"center", padding:"1rem"}}>#for logo</h1>
 
         <Card className={styles.profileLoginCard}>
