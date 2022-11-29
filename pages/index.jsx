@@ -37,9 +37,9 @@ const Home = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
+        <h2 className={styles.title}>
           <a href="">Mastr.Bord</a>
-        </h1>
+        </h2>
 
         <a href="https://velalarengg.ac.in/">
             <h2>V C E T</h2>
