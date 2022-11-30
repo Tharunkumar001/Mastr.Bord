@@ -138,7 +138,7 @@
   padding: 1em;
   margin: 1em;
   text-decoration: none;
-    background-size:0 5px, auto;
+  background-size:0 5px, auto;
   background-repeat: no-repeat;
   background-position: center bottom;
   transition: all .2s ease-out;

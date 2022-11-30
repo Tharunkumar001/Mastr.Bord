@@ -18,7 +18,8 @@
     "react-bootstrap": "^2.6.0",
     "react-bootstrap-range-slider": "^3.0.8",
     "react-dom": "18.2.0",
-    "react-edit-text": "^5.0.2"
+    "react-edit-text": "^5.0.2",
+    "react-swipeable-views": "^0.14.0"
   },
   "devDependencies": {
     "eslint": "8.25.0",

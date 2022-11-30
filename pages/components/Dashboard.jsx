@@ -8,20 +8,14 @@ import { BorderColor, LaptopWindows, PersonAdd, PersonPinCircle } from "@materia
 import ClassStats from "./Stats/ClassStats";
 import CreationStats from "./Stats/CreationStats";
 import Grievence from "./Stats/Grievence";
+import SwitchTabs from "./TabComponents";
 
 const useStyles = makeStyles((theme) => ({
     submitBtn:{
-        font: "1em Arial, sans-serif",
-            display: "inline-block",
-            padding: "1em",
-            margin: "1em",
-            textDecoration: "none",
-            borderRadius:'0.5rem',
-            backgroundImage: "linear-gradient(dodgerblue, dodgerblue), linear-gradient(silver, silver)",
-            backgroundSize:" 0 5px, auto",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center bottom",
-            transition:" all .2s ease-out",
+        width:"fit-content",
+        borderRadius:"0.5rem",
+        padding:"0.5rem",
+        marginLeft:"1rem"
     },
     navBtnDiv:{
         display:"flex",
@@ -34,6 +28,15 @@ const useStyles = makeStyles((theme) => ({
     navBtn:{
         padding:"0.3rem",
         borderRadius:"0.4rem"
+    },
+    rootCard:{
+        width:"95%",
+        height: "90hv",
+        margin:"1rem",
+        marginRight:"auto",
+        marginLeft:"auto",
+        background: "linear-gradient(107deg, rgba(43,41,44,1) 0%, rgba(59,135,218,1) 0%, rgba(240,242,244,1) 100%, rgba(82,111,143,0) 100%)"
+
     }
 }));
 
@@ -63,9 +66,9 @@ const Dashboard = () => {
     return(
 
     <div>
-        <Card className={styles.superAdminCardRoot}>
+        <Card className={classes.rootCard}>
             <div className={styles.superAdminCard}>
-                <CardContent style={{display:"flex", flexDirection:"row"}}>
+                <CardContent style={{display:"flex", flexDirection:"column"}}>
                     <CardHeader title="@dashboard" subheader="sueperadmin@gmail.com" />
                     <Button className={classes.submitBtn} onClick={handleOpen}>
                         Access
@@ -75,21 +78,9 @@ const Dashboard = () => {
                 <CardContent>
                 <Divider />
                 
-                <div className={classes.navBtnDiv}>
-                    <Button className={classes.navBtn} onClick={() => setStats(<ClassStats />)}>
-                        Class
-                    </Button>
-                    <Button className={classes.navBtn} onClick={() => setStats(<CreationStats />)}>
-                        Creation
-                    </Button>
-                    <Button className={classes.navBtn} onClick={() => setStats(<Grievence />)}>
-                        Grievence
-                    </Button>
+                <div>
+                    <SwitchTabs />
                 </div>
-                </CardContent>
-
-                <CardContent>
-                    {stats}
                 </CardContent>
             </div>
         </Card>

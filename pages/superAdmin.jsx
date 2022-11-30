@@ -15,13 +15,11 @@ const useStyles = makeStyles((theme) => ({
         padding: "1em",
         margin: "1em",
         textDecoration: "none",
-        
-        backgroundImage: "linear-gradient(dodgerblue, dodgerblue), linear-gradient(silver, silver)",
+        backgroundImage: "linear-gradient(dodgerblue, dodgerblue)",
         backgroundSize:" 0 5px, auto",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center bottom",
         transition:" all .2s ease-out",
-
         "&:hover":{
             backgroundSize: "100% 5px, auto",
         }
@@ -32,6 +30,9 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('sm')]: {
             flexDirection:"row",
         },
+    },
+    rootCard:{
+        background: "linear-gradient(107deg, rgba(43,41,44,1) 0%, rgba(59,135,218,1) 0%, rgba(240,242,244,1) 100%, rgba(82,111,143,0) 100%)"
     }
 
 }))
@@ -51,22 +52,21 @@ const SuperAdmin = () => {
     return(
         <div className={styles.superAdminCardRoot}>
             <h3>#for logo</h3>
-            <Card className={classes.rootCard}>
-                <div className={classes.superAdminCard} style={{}}>
+            <Card style={{background: "linear-gradient(107deg, rgba(43,41,44,1) 0%, rgba(59,135,218,1) 0%, rgba(240,242,244,1) 100%, rgba(82,111,143,0) 100%)"}}>
+                <div className={classes.superAdminCard}>
                     <CardHeader title="@username" subheader="sueperadmin@gmail.com" />
-
                     <div style={{display:'flex',alignItems:'center',justifyContent:'center',gap:'1rem'}}>
-                        <Button className={classes.btn} 
+                        <Button className={styles.btn} 
                             onClick={() => setState(<Dashboard />)}
                         >
                             {(page)? `Admin`: <PersonAdd />}
                         </Button>
-                        <Button className={classes.btn} 
+                        <Button className={styles.btn} 
                             onClick={() => setState(<ClassCreation />)}
                         >
                             {(page)? `Creation`: <BorderColor />}
                         </Button>
-                        <Button className={classes.btn}
+                        <Button className={styles.btn}
                             onClick={() => setState(<Classes />)}
                         >
                             {(page)? `classes`: <LaptopWindows />}
