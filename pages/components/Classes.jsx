@@ -11,6 +11,8 @@ const Classes = () => {
     
 return(
     <div style={{marginBottom:"3rem"}}>
+    <h2 style={{textAlign:"center"}}>Classes</h2>
+
         <div className={styles.superAdminCardRoot}>                  
                 <ClassCard />
         </div>

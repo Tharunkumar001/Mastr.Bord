@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, Dialog, DialogContent, DialogTitle, Grid, IconButton } from "@material-ui/core"
+import { Card, CardContent, CardHeader, Dialog, DialogContent, DialogTitle, Divider, FormControlLabel, FormLabel, Grid, IconButton, Radio, RadioGroup } from "@material-ui/core"
 import React from "react";
 import { useState } from "react";
 import Multiselect from 'multiselect-react-dropdown';
@@ -61,14 +61,18 @@ function ClassCard({ Component, pageProps }) {
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
                 fullScreen
+                style={{display:"flex", justifyContent:"center",height:"fit-content",marginTop:"1rem"}}
             >
-                <DialogTitle style={{textAlign:"center", fontStyle:"bold",display:"flex", flexDirection:"row",justifyContent:"center"}}>
+            
+            <DialogTitle 
+            style={{textAlign:"center", fontStyle:"bold",display:"flex",
+                flexDirection:"row",justifyContent:"center",}}>
 
-                    <h3 style={{textAlign:"center"}}>Attendance Portal</h3>
+                <h3 style={{textAlign:"center"}}>Attendance Portal</h3>
 
-                    <IconButton color="secondary" aria-label="add an alarm" onClick={handleClose}>
-                        <Close />
-                    </IconButton>                
+                <IconButton color="secondary" aria-label="add an alarm" onClick={handleClose}>
+                    <Close />
+                </IconButton>                
                 </DialogTitle>
 
                 <DialogContent style={{display:"flex", flexDirection:"column", gap:'1rem'}}>
@@ -77,10 +81,26 @@ function ClassCard({ Component, pageProps }) {
                         <h4>Strength</h4>
                         <h4>Admin</h4>
                     </div>
-                    
+
                     <div style={{display:"flex", flexDirection:"column", gap:'1rem'}}>
+                        <label>Enter Period Details</label>
+                        <div style={{display:"flex", flexDirection:"row", gap:'1rem'}}>
+                            <input type="date" style={{border:"none", outline:"none"}}/>
+                            <RadioGroup
+                                row
+                                aria-labelledby="demo-row-radio-buttons-group-label"
+                                name="row-radio-buttons-group"
+                            >
+                                <FormControlLabel value="FN" control={<Radio />} label="FN" />
+                                <FormControlLabel value="AN" control={<Radio />} label="AN" />
+                            </RadioGroup>
+                        </div>
+                    </div>
+                    <div style={{display:"flex", flexDirection:"column", gap:'1rem'}}>
+                        <label>Select Absentees from dropdown</label>
                         <Multiselect
-                            options={options} // Options to display in the dropdown
+                            options={options}
+                            loading={false}
                             selectedValues={selectedValue} // Preselected value to persist in dropdown
                             onSelect={onSelect} // Function will trigger on select event
                             onRemove={onRemove} // Function will trigger on remove event
@@ -89,13 +109,19 @@ function ClassCard({ Component, pageProps }) {
                             // Property name to display in the dropdown options
                         />
                         <label><input type="checkbox" required />Comfirm</label>
-                        <button style={{width:"fit-content"}}>Submit</button>
+                        <label>Enter Valid class password</label>
+
+                        <form>
+                            <input type="password" required style={{borderRadius:"0.5rem",padding:"0.5rem", marginRight:"0.3rem"}}/>
+                            <button style={{width:"fit-content",borderRadius:"0.5rem",padding:"0.5rem"}}>Submit</button>
+
+                        </form>
                     </div>
                 </DialogContent>
 
                 <DialogContent>
-
                 </DialogContent>
+                
             </Dialog>
         </div>
 
