@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
             display:"flex",
             flexDirection:"row",
             gap:'1rem',
-            padding:'1.5rem',            
+            padding:'0.2rem',            
         }
     },
 
@@ -74,7 +74,7 @@ const ClassCreation = () => {
     return(
         
         <div>
-            <Card className={styles.superAdminCardRoot}>
+            <div className={styles.superAdminCardRoot}>
                 <h2 style={{textAlign:"center"}}>Class Creation Form</h2>
                 <div className={classes.form}>
                     <form>
@@ -210,7 +210,7 @@ const ClassCreation = () => {
                     </Box>
                     </form>
                 </div>
-            </Card>
+            </div>
 
             <Dialog
                 open={open}

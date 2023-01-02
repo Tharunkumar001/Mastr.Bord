@@ -159,6 +159,14 @@
   background-size: 100% 5px, auto;
 }
 
+.bottomNav{
+  outline: none;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
 /* AuthPage */
 .profileLoginCard{
   width: fit-content;

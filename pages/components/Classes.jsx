@@ -10,11 +10,9 @@ const Classes = () => {
     const classes = useStyles();
     
 return(
-    <div >
+    <div style={{marginBottom:"3rem"}}>
         <div className={styles.superAdminCardRoot}>                  
-            <div className={styles.superAdminCard}>
                 <ClassCard />
-            </div>
         </div>
     </div>
 )

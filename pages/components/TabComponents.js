@@ -50,7 +50,7 @@ function TabPanel(props) {
         setValue(index);
     };
 
-    const Screen =  window.matchMedia("(min-width: 768px)");
+    //const Screen =  window.matchMedia("(min-width: 768px)");
 
     return (
         <Box sx={{ bgcolor: 'background.paper', width: 500 }}>
