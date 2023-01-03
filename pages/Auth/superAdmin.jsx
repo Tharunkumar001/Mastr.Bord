@@ -6,6 +6,7 @@ import {Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } f
 import { Visibility, VisibilityOff } from '@material-ui/icons';
 import { useState } from 'react';
 import cogoToast from 'cogo-toast';
+import logo from "../../public/mastr_bord_logo.png";
 
 const SuperAdmin = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -14,7 +15,7 @@ const SuperAdmin = () => {
     const [details, setDetails] = useState({Email:'', Username:'', Password:''});
 
     const loginHandler = async () => {    
-        //api call
+       //api call
         let val = await validate();
         console.log(val);
         if(val){
@@ -49,8 +50,14 @@ const SuperAdmin = () => {
     }
     return (
         <div className={styles.rootDiv}>
-            <h1 style={{textAlign:"center"}}>#for logo</h1>
-
+            <div style={{display:"flex", justifyContent:"center"}}>
+                <Image
+                    src={logo}
+                    alt="Picture of the author"
+                    width={400}
+                    height={200}
+                />
+            </div>
             <Card className={styles.profileLoginCard}>
             <h1 style={{textAlign:"center"}}>Super Admin</h1>
                 <CardActions className={styles.profileLoginCardAction}>

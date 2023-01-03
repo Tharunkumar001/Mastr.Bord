@@ -3,6 +3,8 @@ import { Card, CardActions, TextField, ButtonBase} from '@material-ui/core';
 import Arrow from "@material-ui/icons/SendOutlined"
 import { useState } from 'react';
 import cogoToast from 'cogo-toast';
+import logo from "../../public/mastr_bord_logo.png";
+import Image from 'next/image';
 
 const StudentAuth = () => {
     const [details, setDetails] = useState({rollNo: "", dept: ""});
@@ -17,8 +19,14 @@ const StudentAuth = () => {
 
     return (
         <div className={styles.rootDiv}>
-        <h1 style={{textAlign:"center", padding:"1rem"}}>#for logo</h1>
-
+            <div style={{display:"flex", justifyContent:"center"}}>
+                <Image
+                    src={logo}
+                    alt="Picture of the author"
+                    width={400}
+                    height={200}
+                />
+            </div>
         <Card className={styles.profileLoginCard}>
         <h1 style={{textAlign:"center"}}>Student</h1>
             <CardActions className={styles.profileLoginCardAction}>

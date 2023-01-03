@@ -5,7 +5,8 @@ import {Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } f
 import { useState } from 'react';
 import cogoToast from 'cogo-toast';
 import { Visibility, VisibilityOff } from '@material-ui/icons';
-
+import Image from 'next/image';
+import logo from "../../public/mastr_bord_logo.png";
 
 const useStyles = makeStyles((theme) => ({
     input: {
@@ -59,7 +60,14 @@ const AdminPage = () => {
 
     return (
         <div className={styles.rootDiv}>
-            <h1 style={{textAlign:"center"}}>#for logo</h1>
+            <div style={{display:"flex", justifyContent:"center"}}>
+                <Image
+                    src={logo}
+                    alt="Picture of the author"
+                    width={400}
+                    height={200}
+                />
+            </div>
 
             <Card className={styles.profileLoginCard}>
             <h1 style={{textAlign:"center"}}>Admin</h1>

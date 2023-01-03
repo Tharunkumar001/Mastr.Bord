@@ -6,6 +6,8 @@ import { useState } from 'react';
 import React from 'react';
 import LoadingComponent from './components/loadingComponent';
 import Background from "../public/mstBg.jpg";
+import logo from "../public/mastr_bord_logo.png";
+import Image from 'next/image';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -37,9 +39,12 @@ const Home = () => {
       </Head>
 
       <main className={styles.main}>
-        <h2 className={styles.title}>
-          <a href="">Mastr.Bord</a>
-        </h2>
+        <Image
+          src={logo}
+          alt="Picture of the author"
+          width={400}
+          height={200}
+        />
 
         <a href="https://velalarengg.ac.in/">
             <h2>V C E T</h2>

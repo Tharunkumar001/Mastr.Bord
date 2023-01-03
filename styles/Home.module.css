@@ -169,12 +169,12 @@
 
 /* AuthPage */
 .profileLoginCard{
+  
   width: fit-content;
   height: fit-content;
   padding: 1rem;
   border-radius: 1.5rem;
   box-sizing: border-box;
-  margin: 1rem;
   margin-right: auto;
   margin-left: auto;
   background-image: linear-gradient(to right, #797783 0%, #928DAB  51%, #b4b4b4  100%);
