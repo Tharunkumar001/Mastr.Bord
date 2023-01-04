@@ -1,4 +1,4 @@
-import { Button, Card, CardContent, CardHeader, Dialog, DialogActions, DialogContent, DialogTitle, Divider, IconButton, makeStyles, MenuItem, TextField } from "@material-ui/core";
+import { Button, Card, CardContent, CardHeader, Dialog, DialogActions, DialogContent, DialogTitle, Divider, makeStyles, MenuItem, TextField } from "@material-ui/core";
 import { useState } from "react";
 import styles from "../../styles/Home.module.css";
 import CoAdmin from "../Form/CoAdmin";
@@ -12,16 +12,12 @@ import Image from "next/image";
 import logo from "../../public/mastr_bord_logo.png";
 
 const useStyles = makeStyles((theme) => ({
-
     accessBtn:{
-        backgroundColor:"#006ff7",
         borderRadius:"0.5rem",
         paddingtop:"0.5rem",
         paddingBottom:"0.5rem",
         paddingLeft:"1rem",
         paddingRight:"1rem",
-        color:"white",
-        hover:"none"
     },
     navBtnDiv:{
         display:"flex",
@@ -36,11 +32,13 @@ const useStyles = makeStyles((theme) => ({
         borderRadius:"0.4rem"
     },
     rootCard:{
-        width:"100%",
+        width:"95%",
         height: "90hv",
         margin:"1rem",
         marginRight:"auto",
         marginLeft:"auto",
+        border:'none',
+        background:"none"
         // background: "linear-gradient(107deg, rgba(43,41,44,1) 0%, rgba(59,135,218,1) 0%, rgba(240,242,244,1) 100%, rgba(82,111,143,0) 100%)"
 
     }
@@ -81,26 +79,32 @@ const Dashboard = () => {
                 height={200}
             />
         </div>
-
-        <div  style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
-            <h2 style={{textAlign:"center"}}>Dashboard</h2>
-
-            <Button variant="outlined" startIcon={<TouchApp />} className={classes.accessBtn}
+        <div style={{display:"flex", alignItems:"center", flexDirection:"column"}}>
+        <h2 style={{textAlign:"center"}}>Dashboard</h2>
+        <Button variant="outlined" className={classes.accessBtn} startIcon={<TouchApp />} 
                 onClick={handleOpen}
             >
                 Access
             </Button>
         </div>
 
+        <div className={classes.rootCard}>
             <div className={styles.superAdminCard}>
+                <CardContent style={{display:"flex", flexDirection:"column"}}>
+                    {/* <CardHeader title="@dashboard" subheader="sueperadmin@gmail.com" /> */}
+       
+                </CardContent>
                 
                 <CardContent>
-                    <Divider />
-                    <div>
-                        <SwitchTabs />
-                    </div>
+                <Divider />
+                
+                <div>
+                    <SwitchTabs />
+                </div>
                 </CardContent>
             </div>
+        </div>
+
 
             <Dialog
                 open={open}
@@ -113,10 +117,10 @@ const Dashboard = () => {
                 </DialogTitle>
                 
                 <DialogContent className={styles.alertDialogContent}>
-                    <Button className={classes.accessBtn} onClick={() => setForm(<CoAdmin />)}>
+                    <Button variant="outlined" className={classes.accessBtn}  onClick={() => setForm(<CoAdmin />)}>
                         Co-Admin
                     </Button>
-                    <Button className={classes.accessBtn} onClick={() => setForm(<FacultyAdmin />)}>
+                    <Button variant="outlined" className={classes.accessBtn}  onClick={() => setForm(<FacultyAdmin />)}>
                         Faculty Admin
                     </Button>
                 </DialogContent>

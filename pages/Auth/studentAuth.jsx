@@ -5,9 +5,11 @@ import { useState } from 'react';
 import cogoToast from 'cogo-toast';
 import logo from "../../public/mastr_bord_logo.png";
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 const StudentAuth = () => {
     const [details, setDetails] = useState({rollNo: "", dept: ""});
+    const router = useRouter();
 
     const loginHandler = async () => {    
         //api call
@@ -19,7 +21,7 @@ const StudentAuth = () => {
 
     return (
         <div className={styles.rootDiv}>
-            <div style={{display:"flex", justifyContent:"center"}}>
+            <div style={{display:"flex", justifyContent:"center"}}  onClick={() => router.push("/")}>
                 <Image
                     src={logo}
                     alt="Picture of the author"

@@ -7,6 +7,7 @@ import cogoToast from 'cogo-toast';
 import { Visibility, VisibilityOff } from '@material-ui/icons';
 import Image from 'next/image';
 import logo from "../../public/mastr_bord_logo.png";
+import { useRouter } from 'next/router';
 
 const useStyles = makeStyles((theme) => ({
     input: {
@@ -19,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
 
 const AdminPage = () => {
     const classes = useStyles();
+    const router = useRouter();
     const [showPassword, setShowPassword] = useState(false);
     const handleClickShowPassword = () => setShowPassword(!showPassword);
     const [details, setDetails] = useState({Email:'', Username:'', Password:''});
@@ -60,7 +62,7 @@ const AdminPage = () => {
 
     return (
         <div className={styles.rootDiv}>
-            <div style={{display:"flex", justifyContent:"center"}}>
+            <div style={{display:"flex", justifyContent:"center"}}  onClick={() => router.push("/")}>
                 <Image
                     src={logo}
                     alt="Picture of the author"

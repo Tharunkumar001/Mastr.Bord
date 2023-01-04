@@ -7,10 +7,12 @@ import { Visibility, VisibilityOff } from '@material-ui/icons';
 import { useState } from 'react';
 import cogoToast from 'cogo-toast';
 import logo from "../../public/mastr_bord_logo.png";
+import { useRouter } from 'next/router';
 
 const SuperAdmin = () => {
     const [showPassword, setShowPassword] = useState(false);
     const handleClickShowPassword = () => setShowPassword(!showPassword);
+    const router = useRouter();
 
     const [details, setDetails] = useState({Email:'', Username:'', Password:''});
 
@@ -50,7 +52,7 @@ const SuperAdmin = () => {
     }
     return (
         <div className={styles.rootDiv}>
-            <div style={{display:"flex", justifyContent:"center"}}>
+            <div style={{display:"flex", justifyContent:"center"}}  onClick={() => router.push("/")}>
                 <Image
                     src={logo}
                     alt="Picture of the author"
