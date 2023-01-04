@@ -1,10 +1,9 @@
-import { Card, CardContent, CardHeader, Dialog, DialogActions, DialogContent, DialogTitle, Divider, makeStyles, MenuItem, TextField } from "@material-ui/core";
+import { Button, Card, CardContent, CardHeader, Dialog, DialogActions, DialogContent, DialogTitle, Divider, IconButton, makeStyles, MenuItem, TextField } from "@material-ui/core";
 import { useState } from "react";
-import { Button } from "react-bootstrap";
 import styles from "../../styles/Home.module.css";
 import CoAdmin from "../Form/CoAdmin";
 import FacultyAdmin from "../Form/FacultyAdmin";
-import { BorderColor, LaptopWindows, PersonAdd, PersonPinCircle } from "@material-ui/icons";
+import { BorderColor, LaptopWindows, PersonAdd, PersonPinCircle, TouchApp } from "@material-ui/icons";
 import ClassStats from "./Stats/ClassStats";
 import CreationStats from "./Stats/CreationStats";
 import Grievence from "./Stats/Grievence";
@@ -13,12 +12,16 @@ import Image from "next/image";
 import logo from "../../public/mastr_bord_logo.png";
 
 const useStyles = makeStyles((theme) => ({
-    submitBtn:{
-        width:"fit-content",
-        borderRadius:"0.5rem",
-        padding:"0.5rem",
-        marginLeft:"1rem",
 
+    accessBtn:{
+        backgroundColor:"#006ff7",
+        borderRadius:"0.5rem",
+        paddingtop:"0.5rem",
+        paddingBottom:"0.5rem",
+        paddingLeft:"1rem",
+        paddingRight:"1rem",
+        color:"white",
+        hover:"none"
     },
     navBtnDiv:{
         display:"flex",
@@ -81,7 +84,10 @@ const Dashboard = () => {
 
         <div  style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
             <h2 style={{textAlign:"center"}}>Dashboard</h2>
-            <Button className={classes.submitBtn} onClick={handleOpen}>
+
+            <Button variant="outlined" startIcon={<TouchApp />} className={classes.accessBtn}
+                onClick={handleOpen}
+            >
                 Access
             </Button>
         </div>
@@ -107,10 +113,10 @@ const Dashboard = () => {
                 </DialogTitle>
                 
                 <DialogContent className={styles.alertDialogContent}>
-                    <Button style={{borderRadius:"0.5rem",padding:"0.3rem"}} onClick={() => setForm(<CoAdmin />)}>
+                    <Button className={classes.accessBtn} onClick={() => setForm(<CoAdmin />)}>
                         Co-Admin
                     </Button>
-                    <Button style={{borderRadius:"0.5rem",padding:"0.3rem"}} onClick={() => setForm(<FacultyAdmin />)}>
+                    <Button className={classes.accessBtn} onClick={() => setForm(<FacultyAdmin />)}>
                         Faculty Admin
                     </Button>
                 </DialogContent>
