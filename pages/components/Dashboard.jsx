@@ -9,6 +9,8 @@ import ClassStats from "./Stats/ClassStats";
 import CreationStats from "./Stats/CreationStats";
 import Grievence from "./Stats/Grievence";
 import SwitchTabs from "./TabComponents";
+import Image from "next/image";
+import logo from "../../public/mastr_bord_logo.png";
 
 const useStyles = makeStyles((theme) => ({
     submitBtn:{
@@ -35,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
         margin:"1rem",
         marginRight:"auto",
         marginLeft:"auto",
-        background: "linear-gradient(107deg, rgba(43,41,44,1) 0%, rgba(59,135,218,1) 0%, rgba(240,242,244,1) 100%, rgba(82,111,143,0) 100%)"
+        // background: "linear-gradient(107deg, rgba(43,41,44,1) 0%, rgba(59,135,218,1) 0%, rgba(240,242,244,1) 100%, rgba(82,111,143,0) 100%)"
 
     }
 }));
@@ -67,10 +69,20 @@ const Dashboard = () => {
     return(
 
     <div>
+        <div style={{display:"flex", justifyContent:"center"}}>
+            <Image
+                src={logo}
+                alt="Picture of the author"
+                width={400}
+                height={200}
+            />
+        </div>
+        <h2 style={{textAlign:"center"}}>Dashboard</h2>
+
         <Card className={classes.rootCard}>
             <div className={styles.superAdminCard}>
                 <CardContent style={{display:"flex", flexDirection:"column"}}>
-                    <CardHeader title="@dashboard" subheader="sueperadmin@gmail.com" />
+                    {/* <CardHeader title="@dashboard" subheader="sueperadmin@gmail.com" /> */}
                     <Button className={classes.submitBtn} onClick={handleOpen}>
                         Access
                     </Button>

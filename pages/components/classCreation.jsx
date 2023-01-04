@@ -5,6 +5,8 @@ import styles from "../../styles/Home.module.css";
 import React from 'react';
 import * as _ from "lodash";
 import LoadingComponent from "./loadingComponent";
+import Image from "next/image";
+import logo from "../../public/mastr_bord_logo.png";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -73,8 +75,15 @@ const ClassCreation = () => {
     }
     return(
         
-        <div style={{        marginBottom:'5rem',            
-    }}>
+        <div style={{marginBottom:'5rem',}}>
+        <div style={{display:"flex", justifyContent:"center"}}>
+            <Image
+                src={logo}
+                alt="Picture of the author"
+                width={400}
+                height={200}
+            />
+        </div>
             <div className={styles.superAdminCardRoot}>
                 <h2 style={{textAlign:"center"}}>Class Creation Form</h2>
                 <div className={classes.form}>

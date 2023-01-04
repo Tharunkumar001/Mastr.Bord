@@ -45,10 +45,10 @@ const Home = () => {
           width={400}
           height={200}
         />
-
+{/* 
         <a href="https://velalarengg.ac.in/">
             <h2>V C E T</h2>
-        </a>
+        </a> */}
 
         {(loading)?  <div className={styles.loading}>
           <LoadingComponent />
