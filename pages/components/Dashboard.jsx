@@ -17,7 +17,8 @@ const useStyles = makeStyles((theme) => ({
         width:"fit-content",
         borderRadius:"0.5rem",
         padding:"0.5rem",
-        marginLeft:"1rem"
+        marginLeft:"1rem",
+
     },
     navBtnDiv:{
         display:"flex",
@@ -32,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
         borderRadius:"0.4rem"
     },
     rootCard:{
-        width:"95%",
+        width:"100%",
         height: "90hv",
         margin:"1rem",
         marginRight:"auto",
@@ -77,27 +78,23 @@ const Dashboard = () => {
                 height={200}
             />
         </div>
-        <h2 style={{textAlign:"center"}}>Dashboard</h2>
 
-        <Card className={classes.rootCard}>
+        <div  style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
+            <h2 style={{textAlign:"center"}}>Dashboard</h2>
+            <Button className={classes.submitBtn} onClick={handleOpen}>
+                Access
+            </Button>
+        </div>
+
             <div className={styles.superAdminCard}>
-                <CardContent style={{display:"flex", flexDirection:"column"}}>
-                    {/* <CardHeader title="@dashboard" subheader="sueperadmin@gmail.com" /> */}
-                    <Button className={classes.submitBtn} onClick={handleOpen}>
-                        Access
-                    </Button>
-                </CardContent>
                 
                 <CardContent>
-                <Divider />
-                
-                <div>
-                    <SwitchTabs />
-                </div>
+                    <Divider />
+                    <div>
+                        <SwitchTabs />
+                    </div>
                 </CardContent>
             </div>
-        </Card>
-
 
             <Dialog
                 open={open}
