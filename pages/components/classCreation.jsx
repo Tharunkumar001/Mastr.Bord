@@ -7,6 +7,7 @@ import * as _ from "lodash";
 import LoadingComponent from "./loadingComponent";
 import Image from "next/image";
 import logo from "../../public/mastr_bord_logo.png";
+import { classCrationFormSubmit } from "../Service/classCreation";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -53,12 +54,8 @@ const ClassCreation = () => {
     const date = new Date();
     var year = date.getFullYear();
 
-    const [form, setForm] = React.useState({count:1, dept:'CSE', startRno:1, section:'A', yearOfStudy:4, oddOrEven:'ODD',passedOut:year });
+    const [form, setForm] = React.useState({count:1, dept:'CSE', startRno:1, section:'A', yearOfStudy:4, oddOrEven:'ODD',passedOut:2023 });
     const [loading, setLoading] = useState(false);
-
-    const handleChange = (event) => {
-        setCurrency(event.target.value);
-    };
 
     const handleClose = () => {
         setOpen(false);
@@ -70,8 +67,8 @@ const ClassCreation = () => {
 
     const rollNo = [1,60,61,62,63,64,65,66,67,68,69,70];
 
-    const handleSubmit = () => {
-
+    const handleSubmit = async () => {
+        const apiCall = classCrationFormSubmit(form);
     }
     return(
         
@@ -201,7 +198,7 @@ const ClassCreation = () => {
                             select
                             label="PassedOut"
                             value={form.passedOut}
-                            onChange={(e) => setForm({...form, yearOfStudy:e.target.value})}
+                            onChange={(e) => setForm({...form, passedOut:e.target.value})}
                             helperText="Please select valid details"
                         >
                             {_.range(year-4,year+8).map((option) => (
