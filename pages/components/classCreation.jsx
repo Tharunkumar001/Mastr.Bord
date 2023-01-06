@@ -7,7 +7,7 @@ import * as _ from "lodash";
 import LoadingComponent from "./loadingComponent";
 import Image from "next/image";
 import logo from "../../public/mastr_bord_logo.png";
-import { classCrationFormSubmit } from "../Service/classCreation";
+import classCrationFormSubmit from "../Service/classCreation";
 
 
 const useStyles = makeStyles((theme) => ({
