@@ -77,8 +77,8 @@ const ClassCreation = () => {
             <Image
                 src={logo}
                 alt="Picture of the author"
-                width={400}
-                height={200}
+                width={300}
+                height={130}
             />
         </div>
             <div className={styles.superAdminCardRoot}>

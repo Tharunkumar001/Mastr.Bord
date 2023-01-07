@@ -1,4 +1,4 @@
-import { Button, Card, CardContent, CardHeader, Dialog, DialogActions, DialogContent, DialogTitle, Divider, makeStyles, MenuItem, TextField } from "@material-ui/core";
+import { Button, Card, CardActions, CardContent, CardHeader, Dialog, DialogActions, DialogContent, DialogTitle, Divider, IconButton, makeStyles, MenuItem, TextField } from "@material-ui/core";
 import { useState } from "react";
 import styles from "../../styles/Home.module.css";
 import CoAdmin from "../Form/CoAdmin";
@@ -10,6 +10,9 @@ import Grievence from "./Stats/Grievence";
 import SwitchTabs from "./TabComponents";
 import Image from "next/image";
 import logo from "../../public/mastr_bord_logo.png";
+import classImg from "../../public/classImg.jpg";
+import statsImg from "../../public/stats.jpg";
+import Admin from "../../public/Admin.png";
 
 const useStyles = makeStyles((theme) => ({
     accessBtn:{
@@ -31,16 +34,30 @@ const useStyles = makeStyles((theme) => ({
         padding:"0.3rem",
         borderRadius:"0.4rem"
     },
-    rootCard:{
-        width:"95%",
-        height: "90hv",
-        margin:"1rem",
-        marginRight:"auto",
-        marginLeft:"auto",
-        border:'none',
-        background:"none"
-        // background: "linear-gradient(107deg, rgba(43,41,44,1) 0%, rgba(59,135,218,1) 0%, rgba(240,242,244,1) 100%, rgba(82,111,143,0) 100%)"
 
+    statsCard:{
+        width:"fit-content",
+        backgroundColor:"#6ea0eb"
+        // opacity:"0.7"
+    },
+
+    cardDiv:{
+        display:"flex",
+        flexDirection:"column",
+        gap:"1rem",
+        margin:"2rem",
+        justifyContent:"center",
+
+        [theme.breakpoints.up('sm')]: {
+            flexDirection:"row",
+            margin:"2rem",
+            justifyContent:"center",
+        },
+    },
+    
+    backImg:{
+        zIndex:'-2',
+        
     }
 }));
 
@@ -78,35 +95,57 @@ const Dashboard = () => {
                 width={400}
                 height={200}
             />
+
         </div>
         <div style={{display:"flex", alignItems:"center", flexDirection:"column"}}>
         <h2 style={{textAlign:"center"}}>Dashboard</h2>
-        <Button variant="outlined" className={classes.accessBtn} startIcon={<TouchApp />} 
+        {/* <Button variant="outlined" className={classes.accessBtn} startIcon={<TouchApp />} 
                 onClick={handleOpen}
             >
                 Access
-            </Button>
+            </Button> */}
         </div>
 
-        <div className={classes.rootCard}>
-            <div className={styles.superAdminCard}>
-                <CardContent style={{display:"flex", flexDirection:"column"}}>
-                    {/* <CardHeader title="@dashboard" subheader="sueperadmin@gmail.com" /> */}
-       
+        <div className={classes.cardDiv}>
+            <Card className={classes.statsCard}>
+                <CardHeader title="Class Stats" />
+                <CardActions style={{display:"flex",justifyContent:"center"}}>
+                {/* <Button variant="outlined"  className={classes.accessBtn} startIcon={<TouchApp />} /> */}
+                <IconButton>
+                    <TouchApp />
+                </IconButton>
+                </CardActions>
+                <CardContent style={{margin:"0.5rem"}}>
+                    <Image src={classImg} alt="classImg" width={300} height={100} />
                 </CardContent>
-                
-                <CardContent>
-                <Divider />
-                
-                <div>
-                    <SwitchTabs />
-                </div>
+            </Card>
+
+            <Card className={classes.statsCard}>
+                <CardHeader title="Admin Panel" />
+                <CardActions style={{display:"flex",justifyContent:"center"}}>
+                    <IconButton>
+                        <TouchApp />
+                    </IconButton>
+                </CardActions>
+                <CardContent style={{margin:"0.5rem"}}>
+                    <Image src={Admin} alt="classImg" width={300} height={100} />
                 </CardContent>
-            </div>
+            </Card>
+
+            <Card className={classes.statsCard}>
+                <CardHeader title="Students Portal" />
+                <CardActions style={{display:"flex",justifyContent:"center"}}>
+                    <IconButton>
+                        <TouchApp />
+                    </IconButton>
+                </CardActions>
+                <CardContent style={{margin:"0.5rem"}}>
+                    <Image src={statsImg} alt="classImg" width={300} height={100} />
+                </CardContent>
+            </Card>
         </div>
 
-
-            <Dialog
+            {/* <Dialog
                 open={open}
                 onClose={handleClose}
                 aria-labelledby="alert-dialog-title"
@@ -139,7 +178,7 @@ const Dashboard = () => {
                     
                 </DialogActions>
                 
-            </Dialog>
+            </Dialog> */}
     </div>
         
     )

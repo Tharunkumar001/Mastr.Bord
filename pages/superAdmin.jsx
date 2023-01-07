@@ -6,7 +6,7 @@ import ClassCreation from "./components/classCreation";
 import Classes from "./components/Classes";
 import Dashboard from "./components/Dashboard";
 import styles from "../styles/Home.module.css";
-import backgroundImg from "../public/mstBg.jpg";
+import backgroundImg from "../public/vcet.jpg";
 import Image from "next/image";
 
 const useStyles = makeStyles((theme) => ({
@@ -19,6 +19,12 @@ const useStyles = makeStyles((theme) => ({
     },
     rootCard:{
         background: "linear-gradient(107deg, rgba(43,41,44,1) 0%, rgba(59,135,218,1) 0%, rgba(240,242,244,1) 100%, rgba(82,111,143,0) 100%)"
+    },
+
+    backImg:{
+        height:"fit-content",
+        zIndex:'-2',
+        
     }
 }))
 
@@ -68,13 +74,8 @@ const SuperAdmin = () => {
                     <CardHeader title="@username" subheader="sueperadmin@gmail.com" />
                 </div>
             </Card> */}
-            <Image
-                src={backgroundImg}
-                alt="Picture of the author"
-                width={400}
-                height={200}
-            />
-            <div>
+
+            <div style={{zIndex:"5"}}>
                 {container}
             </div>
 

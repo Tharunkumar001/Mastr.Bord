@@ -12,7 +12,7 @@ const Classes = () => {
     const classes = useStyles();
     
 return(
-    <div style={{marginBottom:"3rem"}}>
+    <div style={{marginBottom:"3rem",zIndex:"1"}}>
         <div style={{display:"flex", justifyContent:"center"}}>
             <Image
                 src={logo}
