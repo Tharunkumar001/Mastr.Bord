@@ -6,7 +6,8 @@ import ClassCreation from "./components/classCreation";
 import Classes from "./components/Classes";
 import Dashboard from "./components/Dashboard";
 import styles from "../styles/Home.module.css";
-
+import backgroundImg from "../public/mstBg.jpg";
+import Image from "next/image";
 
 const useStyles = makeStyles((theme) => ({
     rootDiv:{  
@@ -67,7 +68,12 @@ const SuperAdmin = () => {
                     <CardHeader title="@username" subheader="sueperadmin@gmail.com" />
                 </div>
             </Card> */}
-
+            <Image
+                src={backgroundImg}
+                alt="Picture of the author"
+                width={400}
+                height={200}
+            />
             <div>
                 {container}
             </div>
