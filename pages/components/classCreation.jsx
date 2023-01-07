@@ -7,8 +7,7 @@ import * as _ from "lodash";
 import LoadingComponent from "./loadingComponent";
 import Image from "next/image";
 import logo from "../../public/mastr_bord_logo.png";
-import axios from "axios";
-// import classCrationFormSubmit from "../Service/classCreation";
+import classCrationFormSubmit from "../Service/classCreation";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -69,10 +68,7 @@ const ClassCreation = () => {
     const rollNo = [1,60,61,62,63,64,65,66,67,68,69,70];
 
     const handleSubmit = async () => {
-        const data = await axios.get("http://localhost:3000/api/classCreation");
-        
-        console.log(data);
-
+        const apiCall = await classCrationFormSubmit(form);
     }
     return(
         
