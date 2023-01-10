@@ -1,11 +1,32 @@
-import { Card, CardContent, CardHeader, Dialog, DialogContent, DialogTitle, Divider, FormControlLabel, FormLabel, Grid, IconButton, Radio, RadioGroup } from "@material-ui/core"
+import { Card, CardContent, CardHeader, Dialog, DialogContent, DialogTitle, Divider, FormControlLabel, FormLabel, Grid, IconButton, makeStyles, Radio, RadioGroup } from "@material-ui/core"
 import React from "react";
 import { useState } from "react";
 import Multiselect from 'multiselect-react-dropdown';
 import { Button } from "react-bootstrap";
 import { Close } from "@material-ui/icons";
 
+const useStyles = makeStyles((theme) => ({
+    dialogRoot:{
+        display:"flex",
+        flexDirection:"column",
+        gap:"1rem",
+        justifyContent:"center"
+    },
+    rowCss:{
+        display:"flex",
+        flexDirection:"row",
+        gap:"1rem",
+        justifyContent:"center"
+    },
+    colCss:{
+        display:"flex",
+        flexDirection:"column",
+        gap:"1rem",
+    }
+}))
+
 function ClassCard({ Component, pageProps }) {
+    const classes = useStyles();
     const [state, setState] = useState();
     const [open, setOpen] = useState(false);
 
@@ -39,8 +60,6 @@ function ClassCard({ Component, pageProps }) {
         selectedValue = [...selecteditem, selectedValue];
     }
 
-
-
     return(
         <div>
             <Grid container spacing={2}>
@@ -62,11 +81,61 @@ function ClassCard({ Component, pageProps }) {
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
                 fullScreen
-                style={{display:"flex", justifyContent:"center",height:"fit-content",marginTop:"1rem"}}
             >
+                <DialogContent className={classes.dialogRoot}>
+                    <DialogTitle 
+                    style={{textAlign:"center", fontStyle:"bold",display:"flex",
+                    flexDirection:"row",justifyContent:"center",}}>
+
+                        <h3 style={{textAlign:"center"}}>Attendance Portal</h3>
+
+                        <IconButton color="secondary" aria-label="add an alarm" onClick={handleClose}>
+                            <Close />
+                        </IconButton>                
+                    </DialogTitle>
+
+                    <DialogContent>
+                        <form>
+                            <div className={classes.rowCss}>
+                                <input type="date" style={{border:"none", outline:"none"}}/>
+
+                                <RadioGroup
+                                row
+                                aria-labelledby="demo-row-radio-buttons-group-label"
+                                name="row-radio-buttons-group"
+                            >
+                                <FormControlLabel value="FN" control={<Radio />} label="FN" />
+                                <FormControlLabel value="AN" control={<Radio />} label="AN" />
+                            </RadioGroup>
+                            </div>
+                            <div className={classes.colCss}>
+                                <label style={{fontWeight:"bold"}}>Select Absentees from dropdown</label>
+                                <Multiselect
+                                    options={options}
+                                    loading={false}
+                                    selectedValues={selectedValue} // Preselected value to persist in dropdown
+                                    onSelect={onSelect} // Function will trigger on select event
+                                    onRemove={onRemove} // Function will trigger on remove event
+                                    isObject={false}
+                                    
+                                    // Property name to display in the dropdown options
+                                />
+
+                                <label><input type="checkbox" required />Comfirm</label>
+                                <label style={{fontWeight:"bold"}}>Enter Valid class password</label>
+
+                                <input type="password" required style={{borderRadius:"0.5rem",padding:"0.5rem", marginRight:"0.3rem",width:"fit-content"}}/>
+                                <button style={{width:"fit-content",borderRadius:"0.5rem",padding:"0.5rem"}}>Submit</button>
+                            
+                            </div>
+                        
+                        </form>
+                    </DialogContent>
+                </DialogContent>
+            </Dialog>
             
-            <DialogTitle 
-            style={{textAlign:"center", fontStyle:"bold",display:"flex",
+            {/* <DialogTitle 
+                style={{textAlign:"center", fontStyle:"bold",display:"flex",
                 flexDirection:"row",justifyContent:"center",}}>
 
                 <h3 style={{textAlign:"center"}}>Attendance Portal</h3>
@@ -76,7 +145,7 @@ function ClassCard({ Component, pageProps }) {
                 </IconButton>                
                 </DialogTitle>
 
-                <DialogContent style={{display:"flex", flexDirection:"column", gap:'1rem'}}>
+                <DialogContent style={{display:"flex", alignItems:"center",flexDirection:"column", gap:'1rem'}}>
                     <div style={{display:"flex", flexDirection:"row", gap:'1rem'}}>
                         <h4>Class</h4>
                         <h4>Strength</h4>
@@ -85,7 +154,7 @@ function ClassCard({ Component, pageProps }) {
 
                     <div style={{display:"flex", flexDirection:"column", gap:'1rem'}}>
                         <label>Enter Period Details</label>
-                        <div style={{display:"flex", flexDirection:"row", gap:'1rem'}}>
+                        <div style={{display:"flex",alignItems:"center", flexDirection:"row", gap:'1rem'}}>
                             <input type="date" style={{border:"none", outline:"none"}}/>
                             <RadioGroup
                                 row
@@ -123,7 +192,9 @@ function ClassCard({ Component, pageProps }) {
                 <DialogContent>
                 </DialogContent>
                 
-            </Dialog>
+            </Dialog> */}
+
+
         </div>
 
     )

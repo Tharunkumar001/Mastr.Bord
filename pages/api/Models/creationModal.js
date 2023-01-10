@@ -12,6 +12,6 @@ const DefaultSchema = new mongoose.Schema({
 
 mongoose.models = {};
 
-const classCreation = mongoose.model('Default', DefaultSchema);
+const Creation = mongoose.model('Creation', DefaultSchema);
 
-export default classCreation;
+export default Creation;

@@ -1,7 +1,7 @@
 import { Box, Button, Card, CardContent, CardHeader, Dialog, DialogActions, DialogContent, DialogTitle, makeStyles, MenuItem, TextField } from "@material-ui/core";
 import { useState } from "react";
 import styles from "../../styles/Home.module.css";
-
+import axios from "axios";
 import React from 'react';
 import * as _ from "lodash";
 import LoadingComponent from "./loadingComponent";
@@ -67,7 +67,7 @@ const ClassCreation = () => {
     const rollNo = [1,60,61,62,63,64,65,66,67,68,69,70];
 
     const handleSubmit = async () => {
-        const data = await axios.get("http://localhost:3000/api/classCreation");
+        const data = await axios.post("http://localhost:3001/api/classCreation",form);
         console.log(data);
     }
     return(
