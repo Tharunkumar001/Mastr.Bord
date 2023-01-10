@@ -73,14 +73,14 @@ const ClassCreation = () => {
     return(
         
         <div style={{marginBottom:'5rem',}}>
-        <div style={{display:"flex", justifyContent:"center"}}>
+        {/* <div style={{display:"flex", justifyContent:"center"}}>
             <Image
                 src={logo}
                 alt="Picture of the author"
                 width={300}
                 height={130}
             />
-        </div>
+        </div> */}
             <div className={styles.superAdminCardRoot}>
                 <h2 style={{textAlign:"center"}}>Class Creation Form</h2>
                 <div className={classes.form}>

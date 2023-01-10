@@ -6,8 +6,9 @@ import ClassCreation from "./components/classCreation";
 import Classes from "./components/Classes";
 import Dashboard from "./components/Dashboard";
 import styles from "../styles/Home.module.css";
-import backgroundImg from "../public/vcet.jpg";
+import backgroundImg from "../public/mstBg.jpg";
 import Image from "next/image";
+import logo from "../public/mastr_bord_logo.png";
 
 const useStyles = makeStyles((theme) => ({
     rootDiv:{  
@@ -37,7 +38,7 @@ const SuperAdmin = () => {
         
     const [value,setValue] = useState()
 
-    const [container, setContainer] = useState(<Dashboard />)
+    const [container, setContainer] = useState(<ClassCreation />)
 
 
 
@@ -74,6 +75,24 @@ const SuperAdmin = () => {
                     <CardHeader title="@username" subheader="sueperadmin@gmail.com" />
                 </div>
             </Card> */}
+            <div style={{display:"flex", justifyContent:"center"}}>
+                {/* <Image
+                    src={logo}
+                    alt="Picture of the author"
+                    width={400}
+                    height={200}
+                /> */}
+
+                <Image
+                    src={backgroundImg}
+                    alt="Picture of the author"
+                    objectPosition='cover'
+                    height={300}
+                    quality={100}
+                    width={2400}
+
+                />      
+            </div>
 
             <div style={{zIndex:"5"}}>
                 {container}

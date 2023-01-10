@@ -54,7 +54,8 @@ function ClassCard({ Component, pageProps }) {
                     )
                 })}
             </Grid>
-
+            
+            
             <Dialog
                 open={open}
                 onClose={handleClose}

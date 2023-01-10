@@ -13,14 +13,14 @@ const Classes = () => {
     
 return(
     <div style={{marginBottom:"3rem",zIndex:"1"}}>
-        <div style={{display:"flex", justifyContent:"center"}}>
+        {/* <div style={{display:"flex", justifyContent:"center"}}>
             <Image
                 src={logo}
                 alt="Picture of the author"
-                width={400}
-                height={200}
+                width={300}
+                height={130}
             />
-        </div>
+        </div> */}
     <h2 style={{textAlign:"center"}}>Classes</h2>
 
         <div className={styles.superAdminCardRoot}>                  

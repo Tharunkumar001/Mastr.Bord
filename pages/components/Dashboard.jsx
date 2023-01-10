@@ -88,15 +88,7 @@ const Dashboard = () => {
     return(
 
     <div>
-        <div style={{display:"flex", justifyContent:"center"}}>
-            <Image
-                src={logo}
-                alt="Picture of the author"
-                width={400}
-                height={200}
-            />
-
-        </div>
+        
         <div style={{display:"flex", alignItems:"center", flexDirection:"column"}}>
         <h2 style={{textAlign:"center"}}>Dashboard</h2>
         {/* <Button variant="outlined" className={classes.accessBtn} startIcon={<TouchApp />} 
